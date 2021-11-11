@@ -1,0 +1,51 @@
+<!DOCTYPE html> 								<!-- (선언문) 이제부터 html을 만들거야 !-->
+<html>									<!-- !-->
+	<head>
+		<title>웹 페이지의 구성요소</title>
+		<style>
+			body { 
+				background-color : linen; /* 주석 */
+				color : green;
+				margin-left : 40px;
+				margin-right : 40px;
+			}
+			h3 { 
+				text-align : center;
+				colir : darkred;
+			}
+			hr {
+				height : 5px; 
+				border : solid grey;
+				background-color : grey;
+			}
+			span {
+				color : blue;
+				font-size : 20px;
+			}
+		</style>
+		<script>
+			// 라인 주석
+			/* 문단 주석 */
+
+			function show() {
+				// alert("마우스가 영역에 들어왔습니다!");
+				document.getElementById("fig").src="ElvisPresley.png";
+				}
+			function hide(){
+				// alert("마우스가 영역에서 벗어났습니다.");
+				document.getElementById("fig").src="";
+				}
+		</script>
+	</head>
+	<body>
+	<h3 onmouseover="show()" onmouseout="hide()">Elvis Presley</h3>
+	<hr>
+	<div>
+		<img id="fig" src="">
+	</div>
+	He was an American singer and actor. In November<br>
+	1956, he made his film debut in <span>Love Me <br>
+	Tender</span>. HE is often referred to as <br>
+	"<span>the Kng of Rock and Roll</span>".
+	</body>
+</html>
