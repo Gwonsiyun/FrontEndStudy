@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>표 만들기 예제</title>
+</head>
+<body>
+	<h3>표 만들기 예제</h3>
+	<table border="1" width="50%" height="500">
+		<caption>표의제목</caption>
+		<thead>
+			<tr>
+				<th>학번</th>
+				<th>이름</th>
+				<th>점수</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>001</td>
+				<td>홍길동</td>
+				<td>90</td>
+			</tr>
+			<tr>
+				<td>002</td>
+				<td>홍길동</td>
+				<td>90</td>
+			</tr>
+			<tr>
+				<td>003</td>
+				<td>홍길동</td>
+				<td>90</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<th>점수합계</th>
+				<td colspan="2" align="center">300</td>
+			</tr>
+		</tfoot>
+	</table>
+	<h3>셀안에 이미지 표현하기</h3>
+	<table border="1" width="50%">
+		<tbody>
+			<tr align="center">
+				<td><img src="../1.png" width="100"><br>스펀지밥</td>
+				<td><img src="../2.png" width="100"><br>징징이</td>
+				<td><img src="../3.png" width="100"><br>뚱이</td>
+			</tr>
+			<tr align="center">
+				<td>스폰지밥</td>
+				<td>징징이</td>
+				<td>뚱이</td>
+			</tr>
+		</tbody>
+	</table>
+	<h3>가로 병합 예제</h3>
+	<table border="1" width="400">
+		<tbody align="center">
+			<tr>
+				<td colspan="2">1</td>
+				<td>3</td>
+				<td>4</td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td colspan="3">6</td>
+			</tr>
+			<tr>
+				<td>9</td>
+				<td>10</td>
+				<td>11</td>
+				<td>12</td>
+			</tr>
+			<tr>
+				<td colspan="4">13</td>
+			</tr>
+		</tbody>
+	</table>
+	<h3>세로로 병합하기 예제</h3>
+	<table border="1" width="400">
+		<tbody align="center">
+			<tr>
+				<td rowspan="2">1</td>
+				<td>2</td>
+				<td>3</td>
+				<td rowspan="4">4</td>
+			</tr>
+			<tr>
+				<td>6</td>
+				<td rowspan="3">7</td>
+			</tr>
+			<tr>
+				<td>9</td>
+				<td>10</td>
+			</tr>
+			<tr>
+				<td>13</td>
+				<td>14</td>
+			</tr>
+		</tbody>
+	</table>
+	<h3>가로 세로 병합하기</h3>
+	<table border="1" width="400">
+		<tbody align="center">
+			<tr>
+				<td rowspan="3">A</td>
+				<td colspan="2">B</td>
+			</tr>
+			<tr>
+				<td rowspan="2">C</td>
+				<td>D</td>
+			</tr>
+			<tr>
+				<td>E</td>
+			</tr>
+		</tbody>
+	</table><br>
+	<table border="1" width="400">
+		<tbody align="center">
+			<tr>
+				<td colspan="2" rowspan="3">A</td>
+				<td colspan="2">B</td>
+			</tr>
+			<tr>
+				<td rowspan="2">C</td>
+				<td>D</td>
+			</tr>
+			<tr>
+				<td>E</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
