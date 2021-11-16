@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>,체크박스와 라디오버튼 예제</title>
+</head>
+<body>
+	<h2>체크박스 예제</h2>
+	<form method="get">
+		<input type="checkbox" name="number" value="1">1
+		<input type="checkbox" name="number" value="2">2
+		<input type="checkbox" name="number" value="3">3
+		<input type="checkbox" name="number" value="4">4
+		<br>
+		<input type="submit" name="">
+	</form>
+	
+	<div>
+		-예제 취미라는 관심문야에 대한 체크박스 만들기
+		<form method="">
+			<input type="checkbox" name="hobby" value="book">독서
+			<input type="checkbox" name="hobby" value="exercise">운동
+			<input type="checkbox" name="hobby" value="work">산책
+			<input type="checkbox" name="hobby" value="music">음악감상
+			<input type="checkbox" name="hobby" value="movie">영화감상<br>
+			<button type="submit">확인</button>
+		</form>
+	</div>
+	<h2>라디오 버튼을 사용하여 선택양식 만들기</h2>
+		<input type="radio" name="namber" value="1">1
+		<input type="radio" name="namber" value="2">2<br>
+	-예제 설문조사 양식 만들기
+	<form>
+		해당 과정을 만족하십니까?<br>
+		<input type="radio" name="answer" value="5">매우 만족
+		<input type="radio" name="answer" value="4">만족
+		<input type="radio" name="answer" value="3">보통
+		<input type="radio" name="answer" value="2">불만족
+		<input type="radio" name="answer" value="1">매우 불만족
+	</form>
+	<h2>fieldset태그 예제</h2>
+	<form>
+		<fieldset>
+			<legend>기본 정보</legend>
+			이름 : <input type="text" name="name"><br>
+			이름 : <input type="text" name="name"><br>
+			이름 : <input type="text" name="name"><br>
+		</fieldset>
+		<fieldset>
+			<legend>취미</legend>
+			<input type="checkbox" name="hobby" value="book">독서
+			<input type="checkbox" name="hobby" value="exercise">운동
+			<input type="checkbox" name="hobby" value="work">산책
+			<input type="checkbox" name="hobby" value="music">음악감상
+			<input type="checkbox" name="hobby" value="movie">영화감상<br>
+		</fieldset>
+	</form>
+</body>
+</html>

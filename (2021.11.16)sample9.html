@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>datalist 태그 예제 & button 예제</title>
+</head>
+<body>
+	<h2>데이터 항목을 제공하는 텍스트 입력 양식</h2>
+	과일 : <input type="text" list="fruit">
+	<datalist id="fruit">
+		<option value="바나나">
+		<option value="사과">
+		<option value="포도">
+	</datalist>
+
+	<h2>button 만들기 예제</h2>
+	1. 일반 버튼 만들기(전송과 초기화 버튼이 아닌 버튼)<br>
+	-사용하는 태크 &lt;input&gt;, &lt;button&gt;<br>
+	&lt;input&gt; : <input type="button" value="일반버튼" name=""><br>
+	&lt;button&gt; : <button>일반버튼</button>
+	<form>
+		&lt;button&gt; : <button>일반버튼</button> <!--타입설정하지 않을시 폼태그 안에서는 서브밋 기본적용 !-->
+	</form><br>
+	2. 이미지 버튼 만들기
+	-사용하는태그 &lt;input&gt; , &lt;button&gt;<br>
+	&lt;input&gt; : <input type="image" src="../1.png" width="50" height="50" name="">
+	<img src="../1.png" width="50" height="50" name=""><br>
+	&lt;button&gt; : <button type="button"><img src="../1.png" width="50" height="50" name=""></button><br>	
+	3. 전송과 초기호 버튼 만들기 예제
+	-사용하는 태크 &lt;input&gt;, &lt;button&gt;<br>
+	<form>
+		<input type="text" value="test" name=""><br>
+	&lt;input&gt; : <input type="submit" name="">
+		<input type="reset" name="">
+	</form>
+	<form>
+		<input type="text" value="test" name=""><br>
+	&lt;button&gt; : <button type="submit" name="">전송</button>
+		<button type="reset" name="">초기화</button>
+	</form>
+</body>
+</html>
