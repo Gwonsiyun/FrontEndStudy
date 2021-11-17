@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>style sheet 사용하기 (기본문법)</title>
+	<!--<link type="txet/css" rel="stylesheet" href="sample01.css">!-->
+	<style>
+		@import url(sample01.css);
+		h3{
+			color: red;
+		}
+		p{
+			border: 2px solid blue;
+		}
+	</style>
+</head>
+<body>
+	<h3>h3 태그의 텍스트 색상 빨간색으로 변경하기</h3>
+	<p style="color: green;">p 태그의 텍스트 색상은 초록색으로 변경하기</p>
+	<p>p 태그이지만 초록색으로 변경 되지 않는다.</p>
+	<div >
+		외부 css를 활용하여 배경색 노란색 적용하기
+	</div>
+</body>
+</html>

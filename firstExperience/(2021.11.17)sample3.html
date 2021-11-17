@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>color 입력 양식 예제 및 시간 양식 예제</title>
+</head>
+<body>
+	<h2>color 속성을 사용하여 색상 입력 받는 예제</h2>
+	<input type="color" name="" onchange="alert(this.value);">
+	<input type="color" name="" onchange="document.body.style.color=this.value;">
+
+	<h2>날짜 및 시간 관련 입력 양식 만들기</h2>
+	1. 년/월을 입력받는 양식만들기<br>
+	<input type="month" name="" value="2021-05" min="2021-04" max="2021-11"><br>
+
+	2. 년/년도에 해당하는 주 입력 양식 만들기<br>
+	<input type="week" name=""><br>
+
+	3. 년/월/일 입력 양식 만들기<br>
+	<input type="date" name=""><br>
+
+	4. 시/분 입력 양식 만들기<br>
+	<input type="time" name=""><br>
+
+	5. 년/월/일/시/분 입력 양식 만들기<br>
+	<input type="datetime-local" name=""><br>
+</body>
+</html>

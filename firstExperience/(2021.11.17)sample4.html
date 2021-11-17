@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>숫자 관련 입력 양식 만들기</title>
+</head>
+<body>
+	<h2>숫자만 입력할 수 있는 텍스트 박스 만들기</h2>
+	<form>
+	<input type="number" name="number" step="0.5" min="10" max="15">
+	<input type="submit" name="">
+	</form>
+
+	<h2>슬라이드바를 이용한 대략적인 값을 입력받는 양식 만들기</h2>
+	<input type="range" name="" min="0" max="100" onchange="alert(this.value);" value="0" list="datalist">
+	<datalist id="datalist">
+		<option value="10" label="Low">
+		<option value="50" label="Medium">
+		<option value="90" label="High">
+	</datalist>
+
+
+</body>
+</html>

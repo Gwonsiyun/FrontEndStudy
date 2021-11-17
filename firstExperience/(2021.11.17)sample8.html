@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>css 우선순위 예제</title>
+	<!-- css를 읽어들이는 순서
+		 첫번째, 브라우저 스타일
+		 두번째, 링크태그를 사용한 외부 스타일 시트
+		 세번째, style 태그를 사용한 내부 스타일 시트(링크태그가 나중에 선언될시 순서가 바뀔 수 있음)
+		 네번째, style 속성을 사용한 인라인 스타일 시트
+	!-->
+	<link type="text/css" rel="stylesheet" href="sample01.css">
+	<style>
+		div{
+			color: red;
+		}
+		
+	</style>
+</head>
+<body>
+	<div>여기에 스타일을 적용합니다.</div>
+</body>
+</html>

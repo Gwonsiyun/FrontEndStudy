@@ -1,0 +1,15 @@
+body.main{
+	background-color: powderblue;
+	color: blue;
+}
+h3.headline{
+	color: brown;
+	text-align: center;
+}
+p.help{
+	color: red;
+	font-size: 20px;
+}
+#hot{
+	background-color: orange;
+}

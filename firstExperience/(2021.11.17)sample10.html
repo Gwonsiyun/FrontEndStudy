@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>class 선택자와 id 선택자 사용하기</title>
+	<style>
+		.class1{
+			color: blue
+		}
+		p.class1{
+			background-color: yellow
+		}
+		div#id1{
+			background-color: pink
+		}
+	</style>
+</head>
+<body>
+	<h3 class="class1">class 선택자 사용하기</h3>
+	<div class="class1">
+		-class 선택자를 사용하면 태그 이름이 다른 여러 요소를 찾아 동일한 스타일을 적용할 수 있디.
+	</div>
+	<p class="class1">
+		- 사용하는 방법은 찾고자 하는 클래스 속성 값 앞에 .(마침표)를 붙여 셀렉터를 사용한다.
+	</p>
+	<p class="class1">
+		- 특정 태그에만 해당하는 클래스 값을 지닌 요소를 찾고싶으면 태그명.클래스값으로 찾을 수 있다.
+	</p>
+
+	<h3>id 선택자 사용하기</h3>
+	<div id="id1">
+		-id라는 글로벌 속성을 사용하여 해당 속성값이 일치하는 요소를 찾아 스타일을 적용할 수 있다.
+	</div>
+	<div>
+		-사용하는 방법은 찾고자하는 id속성 값 앞에 #을 붙여 사용한다.
+	</div>
+	<div>
+		-특정 태그에 id값이 일치하는 요소를 찾을 때에는 태그명#id속성값 으로 찾을 수 있다.
+	</div>
+
+</body>
+</html>
