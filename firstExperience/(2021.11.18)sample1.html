@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>자식, 자손 셀렉터 예제</title>
+	<style>
+		div{
+			background-color: yellow;
+		}
+		#d1{
+			background-color: pink;
+		}
+		body>div{
+			border: 3px solid black;
+		}
+		div>div{
+			border: 3px solid green;
+		}
+		#d1>div{
+			border: 3px solid red;
+		}
+		#d1>.d2{
+			border: 3px solid blue;
+		}
+		body>div>#d1>p{
+			background-color: purple;
+		}
+		#d3 div{
+			border: 3px solid orange;
+		}
+		#d4 p{
+			color: purple;
+		}
+	</style>
+</head>
+<body>
+	<h3>자식 셀렉터 사용하기</h3>
+	<div>
+		-자식 셀렉터를 사용하여 요소에 테두리를 두른다
+		<div id="d1">
+			-자식 셀렉터를 사용하므로 자손인 div는 테두리가 둘러지지 않는다.
+			<p>-아이디 d1에 자식 p 입니다.</p>
+			<div>-아이디 d1에 자식 div입니다.</div>
+			<div class="d2">-아이디 d1에 자식 div입니다.</div>
+		</div>
+	</div>
+	<h3>자손 선택자 사용하기</h3>
+	<div id="d3">
+		<div>
+			-자식 div입니다.
+			<div>
+				-손자 div1입니다.
+			</div>
+			<div>
+				-손자 div1입니다.
+			</div>
+		</div>
+	</div>
+	<div id="d4">
+		<p>
+			-자식 p태그입니다.
+		</p>
+		<div>
+			-자식 div입니다.
+			<div>-d4의 손자 div입니다.</div>
+			<p>- d4의 손자 p입니다.</p>
+		</div>
+	</div>
+</body>
+</html>

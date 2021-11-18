@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>형제 선택자 사용하기</title>
+	<style>
+		h3+div{ /*+는 인접형제 선택자(바로밑에 있는 형제를 선택한다.*/
+			color: red;
+		}
+		h3+div+ul{
+			color: blue;
+		}
+		h3~div{
+			background-color: yellow;
+		}
+	</style>
+</head>
+<body>
+	<h3>형제 선택자 사용하기</h3>
+	<div>body의 둘째 div1입니다.</div>
+	<ul>
+		<li>항목1</li>
+		<li>항목2</li>
+		<li>항목3</li>
+	</ul>
+	<div>body의 넷째 div2입니다.</div>
+</body>
+</html>

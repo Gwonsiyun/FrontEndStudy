@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>가상 클래스 선택자 예제</title>
+	<style>
+		#d1{
+			width:100px;
+			height:100px;
+			background-color:yellow;
+		}
+		#d1:hover{
+			background-color:red;
+		}
+		#d1:active{
+			background-color:green;
+		}
+		input[type="text"]:focus{
+			background-color: orange;
+		}
+		input[type="text"]:focus+span{
+			color: gray;
+		}
+		input[type="password"]:focus+div>p{
+			color: gray;
+		}
+	</style>
+</head>
+<body>
+	<h3>마우스 관련 가상 클래스 선택자</h3>
+	<div id="d1">
+	</div>
+	<h3>폼 관련 가상 클래스 선택자</h3>
+	<input type="text" name="">
+	<span>입력양식에 포커스가 가면 텍스트 색상이 변합니다.</span><br>
+	<input type="password" name="">
+	<div>
+		이 텍스트는 색상이 변하지 않습니다.
+		<p>
+		패스워드에 포커스가 가면 텍스트 색상이 회색으로 변합니다.
+		</p>
+	</div>
+</body>
+</html>

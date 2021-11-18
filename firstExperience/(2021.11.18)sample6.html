@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>구조적 가상 클래스 선택자</title>
+	<style>
+		#d3 div,#d3 p{
+			display:inline-block;
+			width:50px;
+			height:50px;
+			border:2px solid black;
+			margin:0px;
+		}
+		#d3 p{
+			border:2px solid purple;
+		}
+		#d3 div:nth-child(2n-1){ /*숫자를 넣거나 evne는 짝수 odd는 홀수, 수열도 입력가능*/
+			background-color:yellow;/*child는 선택된 태그가 포함된 전체객체중에 선택된 번호*/
+		}
+		#d3 div:nth-of-type(2){ /*선택된 div로 부터 몇번째요소*/
+			background-color: orange;/*of-type은 선택된 태그중에 선택된 번호*/
+		}
+		#d3 p:first-child{
+			background-color: blue;
+		}
+		#d3 p:first-of-type{
+			background-color: yellow;
+		}
+		#d3 p:last-child{
+			background-color: red;
+		}
+		#d3 p:last-of-type{
+			background-color: blue;
+		}
+		td:first-child{			/*화면에 보이는 요소중 첫번째에 해당하는 모든 요소*/
+			background-color: blue;
+		}
+		td:last-of-type{
+			background-color: yellow;
+		}
+		#d5 div{				/*화면에 보이는 요소중 마지막에 해당하는 모든 요소*/
+			display:inline-block;
+			width:50px;
+			height:30px;
+			border: 2px solid black;
+		}
+		#d5 div:not(#not){		/*d5안에 div중에 지운다 #not를 *//*.not은 전체*/
+			background-color: yellow;
+		}
+
+	</style>
+</head>
+<body>
+	<h3>구조적 가상 클래스 선택자</h3>
+	<div id="d3">
+		<div></div>
+		<div></div>
+		<p></p>
+		<div></div>
+		<p></p>
+		<div></div>
+		<div></div>
+		<div></div>
+		<p></p>
+	</div>
+	<table border="1">
+		<tr>
+			<td>1-1</td>
+			<td>1-2</td>
+			<td>1-3</td>
+			<td>1-4</td>
+		</tr>
+		<tr>
+			<td>2-1</td>
+			<td>2-2</td>
+			<td>2-3</td>
+			<td>2-4</td>
+		</tr>
+		<tr>
+			<td>3-1</td>
+			<td>3-2</td>
+			<td>3-3</td>
+			<td>3-4</td>
+		</tr>
+		<tr>
+			<td>4-1</td>
+			<td>4-2</td>
+			<td>4-3</td>
+			<td>4-4</td>
+		</tr>
+	</table>
+	<h3>특정 요소를 제외할 수 있는 가상 클래스 선택자</h3>
+	<div id="d5">
+		<div></div>
+		<div></div>
+		<div id="not"></div>
+		<div></div>
+	</div>
+</body>
+</html>
