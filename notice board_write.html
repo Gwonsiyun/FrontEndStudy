@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>글쓰기</title>
+	<style>
+		@import url("notice board_2.css");
+	</style>
+</head>
+<body>
+	<header>
+		<h1>글쓰기</h1>
+	</header>
+	<section>
+		<form>
+			<table class="table_2" border="1" width="80%">
+				<colgroup>
+					<col width="100px">
+					<col width="*">
+				</colgroup>
+				<tr>
+					<th><label for="name">작성자</label></th>
+					<td><input class="write" id="name" type="text" name="name"></td>
+				</tr>
+				<tr>
+					<th><label for="title">제목</label></th>
+					<td><input class="write" id="title" type="text" name="title"></td>
+				</tr>
+				<tr>
+					<th><label for="contents">내용</label></th>
+					<td class="contents"><textarea class="write" id="contents" name="contents"></textarea></td>
+				</tr>
+				<tr>
+					<th>첨부파일</th>
+					<td><input type="file" name="file"></td>
+				</tr>
+			</table>
+			<p>
+				<button>등록</button><br>
+				<a href="notice board.html">목록으로</a>
+			</p>
+		</form>
+	</section>
+</body>
+</html>

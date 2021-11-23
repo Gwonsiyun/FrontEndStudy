@@ -1,0 +1,21 @@
+table{
+	min-width: 700px;
+}
+th{
+	background-color: skyblue;
+}
+.number{
+	text-align: center;
+}
+.title{
+	text-align: left;
+}
+.name{
+	text-align: center;
+}
+.day{
+	text-align: center;
+}
+.views{
+	text-align: right;
+}

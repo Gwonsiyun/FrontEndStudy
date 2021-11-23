@@ -1,0 +1,16 @@
+table{
+	min-width: 500px;
+}
+th{
+	background-color: skyblue;
+}
+.contents{
+	height: 500px;
+}
+.write{
+	border:none;
+	
+}
+textarea{
+	resize: none;
+}
