@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>overflow</title>
+	<style>
+		div:not(#not){
+			width: 100px;
+			height: 100px;
+			background: yellow;
+			border: 1px solid black;
+		}
+		#not{
+			width: 400px;
+			height: 150px;
+			border: 2px solid black;
+			overflow: auto;
+		}
+	</style>
+</head>
+<body>
+	<h2>overflow</h2>
+	<div id="not">
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+</body>
+</html>

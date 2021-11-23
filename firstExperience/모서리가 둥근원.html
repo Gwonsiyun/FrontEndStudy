@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>둥근 모서리 만들기</title>
+	<style>
+		.radius{
+			width: 200px;
+			height: 200px;
+			background-color: yellow;
+			border: 2px solid navy;
+			margin-top: 10px; 
+		}
+		#radius1{
+			border-radius: 10px/30px;
+		}
+		#radius2{
+			border-top-left-radius: 20px 10px;
+			border-bottom-right-radius: 40px;
+		}
+		#radius3{
+			border-radius:10px 20px 30px 40px;
+		}
+		#radius4{
+			border-radius:10px 20px 30px 40px/20px 30px 40px 50px;
+		}
+		#radius5{
+			border-radius:10px 20px/20px 30px;
+		}
+		
+
+	</style>
+</head>
+<body>
+	<h3>둥근 모서리 예제</h3>
+	<div id="radius1" class="radius"></div>
+	<div id="radius2" class="radius"></div>
+	<div id="radius3" class="radius"></div>
+	<div id="radius4" class="radius"></div>
+	<div id="radius5" class="radius"></div>
+</body>
+</html>

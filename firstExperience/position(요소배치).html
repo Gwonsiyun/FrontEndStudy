@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>위치 설정 예제</title>
+	<style>
+		#relative div{
+			display: inline-block;
+			border: 2px solid navy;
+			background: yellow;
+			width: 50px;
+			height: 50px;
+		}
+		#relative div:nth-child(4){
+			position: relative;
+			left: 50px
+		}
+		#relative div:nth-child(3){
+			position: relative;
+			right: 100px;
+		}
+		#relative div:nth-child(1){
+			position: relative;
+			left: 100px;
+		}
+		#absolute{
+			background: gray;
+			position: relative;
+		}
+		#absolute div{
+			width: 50px;
+			height: 50px;
+			background: yellow;
+			border: 1px solid black;
+		}
+		#absolute div:nth-child(3){
+			position: absolute;
+			left: 100px;
+			top: 200px;
+		}
+		#fixed{
+			width: 50px;
+			height: 50px;
+			background: orange;
+			border: 2px solid red;
+			border-radius: 25px;
+			position: fixed;
+			right: 10px;
+			bottom: 10px;
+		}
+		#fixed:hover{
+			position: static;
+		}
+	</style>
+</head>
+<body>
+	<h2>relative예제</h2>
+	<div id="relative">
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+		<div>4</div>
+	</div>
+	<h2>absolute 예제</h2>
+	<div id="absolute">
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+		<div>4</div>
+	</div>
+	<h2>fixed 예제</h2>
+	<div id="fixed"></div>
+</body>
+</html>

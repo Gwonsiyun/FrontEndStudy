@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>배경 다루기 예제</title>
+	<style>
+		div:not(#not){
+			width: 200px;
+			height: 200px;
+			border: 1px solid black;
+			background-image: url("spongebob.png");
+			background-size: cover; /*100px 100px*/
+			background-repeat: no-repeat; /*repeat-y, repeat-x*/
+			background-position: center center; /*top bottom*/
+		}
+		#not{
+			width: 200px;
+			height: 200px;
+			border: 1px solid black;
+			background:lightgray url("spongebob.png") no-repeat bottom left/100px 100px;/*단축 프로퍼티 색상 url 반복선택 포지션/사이즈는 같이 작성*/
+		}
+	</style>
+</head>
+<body>
+	<h3>배경 다루기 예제</h3>
+	<div>
+		
+	</div>
+	<div id="not">
+		
+	</div>
+</body>
+</html>

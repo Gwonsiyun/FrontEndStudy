@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>display 속성 예제</title>
+	<style>
+		#block>span{
+			border:2px solid green; 
+			width: 500px;
+			display: block;
+		}
+		#inline>div{
+			border: 2px solid orange;
+			display: inline;
+			width: 500px;/*인라인으로 변경시 너비 높이 변경불가*/
+		}
+		#inline-block>div{
+			border: 2px solid orange;
+			display: inline-block;
+			width: 500px;/*인라인블럭으로 변경시 인라인속성과 블럭속성을 동시에 가짐*/
+		}
+		#menu li{
+			display: inline-block;
+			border: 2px solid red;
+			margin: 0px 20px;
+		}
+		#ex01 div{
+			border: 1px solid black;
+		}
+		.table{
+			display: table;
+		}
+		.tr{
+			display: table-row;
+		}		
+		.td{
+			display: table-cell;
+		}
+	</style>
+</head>
+<body>
+	<h2>display:block 예제</h2>
+	<div id="block">
+		<span>span1</span>
+		<span>span2</span>
+		<span>span3</span>
+		<span>span4</span>
+	</div>
+	<h2>display:inline 예제</h2>
+	<div id="inline">
+		<div>div1</div>
+		<div>div2</div>
+		<div>div3</div>
+		<div>div4</div>
+	</div>
+	<h2>display:inline-block예제</h2>
+	<div id="inline-block">
+		<div>div1</div>
+		<div>div2</div>
+		<div>div3</div>
+		<div>div4</div>
+	</div>
+	<h2>display를 이용하여 상단 메뉴 구성해보기</h2>
+	<div id="menu">
+		<ul>
+			<li>메뉴1</li>
+			<li>메뉴2</li>
+			<li>메뉴3</li>
+			<li>메뉴4</li>
+		</ul>
+	</div>
+	<h2>display를 이용하여 div로 테이블 만들기</h2>
+	<div id="ex01">
+		<div class="table">
+			<div class="tr">
+				<div class="td">cell1</div>
+				<div class="td">cell2</div>
+				<div class="td">cell3</div>
+			</div>
+			<div class="tr">
+				<div class="td">cell1</div>
+				<div class="td">cell2</div>
+				<div class="td">cell3</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

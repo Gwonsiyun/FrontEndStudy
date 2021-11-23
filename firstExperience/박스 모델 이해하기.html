@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>박스 모델 이해하기</title>
+	<style>
+		#content{
+			border: 1px solid black;
+			width:30%;
+			height:30vh;
+		}
+		table{
+			width: 50%;
+			min-width: 300px;
+			max-width: 500px;
+		}
+		#padding{
+			border:1px solid black;
+			width: 60px;
+			/*padding: 10px*/
+			/*padding-top: 10px;
+			padding-right: 20px;
+			padding-bottom: 30px;
+			padding-left: 40px;*/
+			padding: 10px 20px 30px 40px;
+		}
+		#padding2{
+			border: 2px solid black;
+			width: 70px;
+			padding: 10px 20px 30px;
+		}
+		#margin1,#margin1+div{
+			border: 1px solid black;
+			width: 70px;
+		}
+		#margin1{
+			/*margin: 10px;*/
+			margin-top: 10px;
+			margin-right: 20px;
+			margin-bottom: 30px;
+			margin-left: 40px;
+		}
+		#margin1+div{
+			margin: 10px auto;/* 요소를 가운데 배치할 수 있다. */
+		}
+		#border1{
+			/*border-width: 3px;*/
+			/*border-style: solid;
+			border-color: red;
+			border-top-width: 5px;
+			border-top-color: red;*/
+			border-top: 5px solid red;
+			border-bottom: 3px solid green;
+		}
+		#dotted{
+			border-style: dotted;
+			margin-top: 5px;
+		}
+		#dashed{
+			border-style: dashed;
+			margin-top: 5px;
+		}
+		#double{
+			border-style: double;
+			margin-top: 5px
+		}
+	</style>
+</head>
+<body>
+	<h3>content 박스</h3>
+	<div id="content">
+		content 
+	</div>
+	<table border="1">
+		<tr>
+			<td>윈도우 크기가 너무 작아지면 요소의 디자인이 틀어질 수 있습니다.</td>
+		</tr>
+	</table>
+
+	<h3>padding 박스</h3>
+	<div id="padding">
+		padding
+	</div>
+	<div id="padding2">
+		padding2
+	</div>
+
+	<h3>margin 박스</h3>
+	<div id="margin1">
+		margin1
+	</div>
+	<div>
+		marhin2
+	</div>
+
+	<h3>border 박스</h3>
+	<div id="border1">
+		border1
+	</div>
+	<div id="dotted">
+		점선
+	</div>
+	<div id="dashed">
+		파선
+	</div>
+	<div id="double">
+		이중선
+	</div>
+</body>
+</html>

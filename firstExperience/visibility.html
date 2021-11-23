@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>visibility 속성 예제</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			background: yellow;
+			border: 1px solid black;
+		}
+		#visibility:hover+div{
+			visibility: hidden;/*visible*/
+		}
+		#display:hover+div{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<h2>visibility 속성 사용하기</h2>
+	<div id="visibility">1</div>
+	<div>2</div>
+	<div id="display">3</div>
+	<div>4</div>
+	<div>5</div>
+</body>
+</html>

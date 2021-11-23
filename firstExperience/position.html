@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>요소 위치 설정 예제</title>
+		<style>
+			header{
+				height:120px;
+				border-bottom:1px solid black;
+			}
+			.header{
+				font-size:30px;
+				font-weight:bold;
+				margin-bottom:10px;
+				padding:20px 10px;
+			}
+			nav>a{
+				color:gray;
+				text-decoration:none;
+			}
+			nav>a:hover{
+				color:black;
+				text-decoration:underline;
+			}
+			.header2{
+				font-size:20px;
+				font-weight:bold;
+				margin-bottom:10px;
+				padding:20px 10px;
+			}
+			#relative,#fixed{
+				border-bottom:1px solid black;
+			}
+			#absolute{
+				border-bottom:1px solid black;
+			}
+			.yellow{
+				width:100px;
+				height:100px;
+				background-color:yellow;
+				border:1px solid black;
+				margin:10px;
+			}
+			.boxwrap2{
+				background-color:black;
+			}
+			.blue{
+				width:350px;
+				height:350px;
+				background-color:blue;
+				border:1px solid black;
+				margin:10px;
+				
+			}
+			.green{
+				width:250px;
+				height:250px;
+				background-color:green;
+				border:1px solid black;
+				margin:10px;
+			}
+			.yellow2{
+				width:150px;
+				height:150px;
+				background-color:yellow;
+				border:1px solid black;
+				margin:10px;
+			}
+			.orange{
+				width:100px;
+				height:100px;
+				background-color:orange;
+				border:1px solid black;
+				margin:10px;
+			}
+			.pink{
+				width:100px;
+				height:100px;
+				background-color:pink;
+				border:1px solid black;
+			}
+			
+			.boxwrap3{
+				background-color:gray;
+				width: 100%;
+				height: 300px;
+			}
+			.boxwrap2{
+				width: 600px;
+				height: 400px;
+				position: relative;
+			}
+			.blue{
+				position: absolute;
+				right: 125px;
+				top: 15px;
+			}
+			.green{
+				position: absolute;
+				right: 175px;
+				top: 65px;
+			}
+			.yellow2{
+				position: absolute;
+				right: 225px;
+				top: 115px;
+			}
+			.orange{
+				position: absolute;
+				right: 250px;
+				top: 140px;
+			}
+			.boxwrap3 div:nth-child(1){
+				position: fixed;
+				right: 10px;
+				bottom: 10px;
+			}
+			.boxwrap3 div:nth-child(2){
+				position: fixed;
+				right: 10px;
+				bottom: 120px;
+			}
+			.boxwrap3 div:nth-child(3){
+				position: fixed;
+				left: 10px;
+				bottom: 10px;
+			}
+			.boxwrap3 div:nth-child(4){
+				position: fixed;
+				left: 10px;
+				bottom: 120px;
+			}
+			.boxwrap div{
+				display: inline-block;
+			}
+			.box1{
+				position: relative;
+				top: 110px;
+			}
+			.boxwrap{
+				height: 300px;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<div class="header">요소 위치 설정 예제</div>
+			<nav>
+				<a href="#relative">상대적 위치 설정</a> |
+				<a href="#absolute">절대적 위치 설정</a> |
+				<a href="#fixed">고정 위치 설정</a>
+			</nav>
+		</header>
+		<section>
+			<article id="relative">
+				<div class="header2">상대적 위치 설정</div>
+				<div class="boxwrap">
+					<div class="box yellow"></div>
+					<div class="box1 yellow"></div>
+					<div class="box yellow"></div>
+					<div class="box1 yellow"></div>
+					<div class="box yellow"></div>
+					<div class="box1 yellow"></div>
+				</div>
+				<div class="top">
+					<a href="#top">[TOP]</a>
+				</div>
+			</article>
+			<article id="absolute">
+				<div class="header2">절대적 위치 설정</div>
+				<div class="boxwrap2">
+					<div class="blue"></div>
+					<div class="green"></div>
+					<div class="yellow2"></div>
+					<div class="orange"></div>
+				</div>
+				<div class="top">
+					<a href="#top">[TOP]</a>
+				</div>
+			</article>
+			<article id="fixed">
+				<div class="header2">고정 위치 설정</div>
+				<div class="boxwrap3">
+					<div class="pink one">1</div>
+					<div class="pink two">2</div>
+					<div class="pink three">3</div>
+					<div class="pink four">4</div>
+				</div>
+				<div class="top">
+					<a href="#top">[TOP]</a>
+				</div>
+			</article>
+		</section>
+	</body>
+</html>
