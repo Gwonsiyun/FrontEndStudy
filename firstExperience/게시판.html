@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>와이어프레임 연습</title>
+	<style>
+		*{
+			margin: 0px;
+		}
+		body{
+			border:1px solid black;
+			width: 800px;
+			height: 80vh;
+			margin: 0px auto;
+			border-radius: 5px;
+			min-width: 800px;
+		}
+		header{
+			width: 100%;
+			text-align: center;
+		}
+		section{
+			width: 90%;
+			height: 75%;
+			padding: 5%;
+		}
+		footer{
+			width: 100%;
+		}
+		li{
+			display: inline-block;
+			margin: 0px 25px;
+		}
+		header p{
+			text-align: right;
+			margin-right: 1em;
+		}
+		header h1{
+			margin-bottom: 20px;
+		}
+		section>div{
+			width: 100%;
+			margin-top: 100px;
+		}
+		form{
+			text-align: right;
+		}
+		table{
+			border-collapse: collapse;
+			width: 100%;
+			height: 400px
+		}
+		tbody td:not(.not){
+			text-align: center;
+		}
+		thead{
+			background: gray;
+		}
+		table tr{
+			border-bottom: 1px solid gray;
+		}
+		.not{
+			color: gray;
+		}
+		article p{
+			font-size: 1.5em;
+			position: relative;
+			bottom: 50px;
+		}
+		span{
+			text-decoration: underline;
+		}
+		article a{
+			border:1px solid gray;
+			padding: 5px;
+			position: relative;
+			top: 20px;
+			margin: 5px;
+		}
+		.article3{
+			text-align: center;
+			width: 100%;
+			height: 50px;
+		}
+
+
+
+	</style>
+</head>
+<body>
+	<header>
+		<p><a href="">회원가입</a> | <a href="">로그인</a></p>
+		<h1>게시판 만들기</h1>
+		<ul>
+			<li>Top Menu1</li>
+			<li>Top Menu2</li>
+			<li>Top Menu3</li>
+			<li>Top Menu4</li>
+			<li>Top Menu5</li>
+		</ul>
+		<hr>
+	</header>
+	<section>
+		<div>
+			<article>
+				<p>Top Menu1><span>Top Menu1_1</span></p>
+				<form>
+					<select>
+						<option>제목+내용</option>
+						<option>제목</option>
+						<option>내용</option>
+					</select>
+					<input type="text" name="">
+					<button>검색</button>
+				</form>
+			</article>
+			<article>
+				<table>
+					<colgroup>
+						<col width="5%">
+						<col width="55%">
+						<col width="10%">
+						<col width="20%">
+						<col width="">
+					</colgroup>
+					<thead>
+						<tr>
+							<th>순번</th>
+							<th>제목</th>
+							<th>작성자</th>
+							<th>작성일</th>
+							<th>조회수</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td class="not">[공지]첫번째 제목입니다.</td>
+							<td>권시윤1</td>
+							<td>2021-11-24</td>
+							<td>11</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td class="not">[공지]두번째 제목입니다.</td>
+							<td>권시윤2</td>
+							<td>2021-11-24</td>
+							<td>11</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td class="not">세번째 제목입니다.</td>
+							<td>권시윤3</td>
+							<td>2021-11-24</td>
+							<td>11</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td class="not">네번째 제목입니다.</td>
+							<td>권시윤4</td>
+							<td>2021-11-24</td>
+							<td>11</td>
+						</tr>
+						<tr>
+							<td>5</td>
+							<td class="not">다섯번째 제목입니다.</td>
+							<td>권시윤5</td>
+							<td>2021-11-24</td>
+							<td>11</td>
+						</tr>
+						<tr>
+							<td>6</td>
+							<td class="not">여섯번째 제목입니다.</td>
+							<td>권시윤6</td>
+							<td>2021-11-24</td>
+							<td>11</td>
+						</tr>
+						<tr>
+							<td>7</td>
+							<td class="not">일곱번째 제목입니다.</td>
+							<td>권시윤7</td>
+							<td>2021-11-24</td>
+							<td>11</td>
+						</tr>
+						<tr>
+							<td>8</td>
+							<td class="not">여덟번째 제목입니다.</td>
+							<td>권시윤8</td>
+							<td>2021-11-24</td>
+							<td>11</td>
+						</tr>
+						<tr>
+							<td>9</td>
+							<td class="not">아홉번째 제목입니다.</td>
+							<td>권시윤9</td>
+							<td>2021-11-24</td>
+							<td>11</td>
+						</tr>
+						<tr>
+							<td>10</td>
+							<td class="not">열번째 제목입니다.</td>
+							<td>권시윤10</td>
+							<td>2021-11-24</td>
+							<td>11</td>
+						</tr>
+					</tbody>
+				</table>
+			</article>
+			<article class="article3">
+				<a><</a><a>1</a><a>2</a><a>3</a><a>4</a><a>5</a><a>></a>
+			</article>
+		</div>
+	</section>
+	<footer>
+		<hr>
+	</footer>
+</body>
+</html>

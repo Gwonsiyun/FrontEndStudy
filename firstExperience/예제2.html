@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>float예제</title>
+	<title>애니메이션</title>
 	<style>
-		#sponzi{
-			border: 1px solid green;
-			padding: 5px;
-			margin: 10px;
-			float: left;
+		span{
+			transition: all 5s;
+		}
+		span:hover{
+			font-size: 500%;
+			color: red;
 		}
 	</style>
 </head>
 <body>
-	<h2>스폰지밥</h2>
+	<h3>font-size에 대한 전환</h3>
 	<hr>
-	<img id="sponzi" src="../1.png" width="200" height="200">
-	저는 스폰지밥입니다.
-	먹는 밥이 아니고요 제 이름이 그냥 그래요. 그리고 어린이부터 노인까지 많은 분들의 사랑을 받고 있어요.
-	제 친구 뚱이도 있고요, 징징이도 있고 집게 사장님도 있어요.
+	<p><span>꽝!</span> 글자에 마우스를 올려보세요.</p>
 </body>
 </html>
