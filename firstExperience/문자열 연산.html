@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>문자열 연산</title>
+</head>
+<body>
+	<script>
+		//1.문자열 연산자-> +
+		//- 문자열 연산자와 덧셈 연산자가 중복 되기 때문에 피연산자의 데이터타입을 잘 살펴봐야한다.
+		//- 피연산자 둘중 하나라도 문자열이면 문자열 연산자로 인식한다.
+
+		console.log("java"+"script");
+		console.log("java"+16);
+		console.log("java"+16+3); //java163
+		console.log("java"+(16+3)); //java19
+
+		var a="test",b=10,c=3;
+		console.log("문자열 a는"+a);//문자열 a는tast
+		console.log("변수 b는 "+b);//변수 b는 10a
+		console.log(b+c+"입니다.");//13입니다.
+	</script>
+</body>
+</html>

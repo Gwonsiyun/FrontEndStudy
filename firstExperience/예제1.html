@@ -1,34 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>애니메이션</title>
-	<style>
-		@keyframes bomb{
-			from{ font-size: 100%; color: blue; }
-			to{ font-size: 500%; color: red; }
-		}
-		h3{
-			animation: bomb;
-			animation-duration: 3s;
-			animation-iteration-count: infinite;
-		}
-		span{
-			transition: font-size 5s;
-			transition: color 5s;
-		}
-		span:hover{
-			font-size: 500%;
-			color: red;
-		}
-	</style>
+	<title>document.write()</title>
 </head>
 <body>
-	<h3>꽝!</h3>
-	<hr>
-	<p>꽝! 글자가 3초동안 100%에서 시작하여 500%로 바뀌는 애니메이션입니다.</p>
-
-	<h3>font-size에 대한 전환</h3>
-	<hr>
-	<p><span>꽝!</span> 글자에 마우스를 올려보세요.</p>
+<script>
+	document.write("<h3>Welcom Home</h3><hr>저희 홈페이지 오신 것을 환영 합니다.")
+</script>
 </body>
 </html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>논리 연산</title>
+</head>
+<body>
+	<script>
+		//논리연산자
+		//1. and 연산자 - &&
+		//-피연산자 1,2는 논리값을 반환할수 있으면 모두 사용될 수 있다.
+
+		var a= true;
+		var b= false;
+
+		/*
+			true && false ->false
+			true && true -> true
+			false && true -> false
+			false && false -> false
+		*/
+		var result;
+		result= a && b; //true && false -> false
+		console.log(result);
+
+		result= (10>20)&&(20<30); //false && true -> false
+		console.log(result);
+
+		//2. or 연산자 - ||
+		/*
+			true && false ->true
+			true && true -> true
+			false && true -> true
+			false && false -> false
+		*/
+		a= true;
+		b= false;
+
+		result= (a||b); // true||false -> true
+		console.log(result);
+
+		result= (10>20)||(20<30); //false && true -> true
+		console.log(result);
+
+		//3. not 연산자 -> !
+		result = !a; //true -> false
+		console.log(result);
+	</script>
+</body>
+</html>

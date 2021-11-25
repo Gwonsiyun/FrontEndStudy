@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>조건문 예제</title>
+</head>
+<body>
+	<script>
+		//if문
+		var a=10;
+
+		if(a<5){
+			console.log("a는 5보다 작습니다.");
+			console.log(a+5);
+			console.log("출력끝~!");
+		}else if(a<8){
+			console.log("a는 5보다 크거나 같습니다.");
+			console.log("a는 8보다 작습니다.");
+		}else{
+			console.log("a는 8보다 크거나 같습니다.");
+		}
+		
+
+		//prompt()사용
+		//사용자에게 점수입력받아오기
+
+		var score = prompt("점수를 입력하세요");
+		//사용자에게 입력받은 값을 활용하여 학점 출력하기
+		//document.write()를 사용하여 학점 브라우저에 출력하기
+		//점수가 90점 이상인 경우는 A
+		//점수가 80점 이상인 경우는 B
+		//점수가 70점 이상인 경우는 C
+		//점수가 60점 이상인 경우는 D
+		//점수가 60점 미만인 경우는 F
+		if(score>=90){
+			document.write("<h3>학점은 A, 점수는 "+score+"입니다.");
+		}else if(score>=80){
+			document.write("<h3>학점은 B, 점수는 "+score+"입니다.");
+		}else if(score>=70){
+			document.write("<h3>학점은 C, 점수는 "+score+"입니다.");
+		}else if(score>=60){
+			document.write("<h3>학점은 D, 점수는 "+score+"입니다.");
+		}else{
+			var numberScore = parseInt(score);
+			//parseInt() -> 문자열로 값을 가지는 데이터를 숫자로 변환하는 함수
+			console.log(numberScore);
+			test= undefined;
+			if(test == undefined){
+				console.log("undefined입니다.")
+			}
+
+			if(isNaN(numberScore)) {
+				//isNaN(값)을 사용하면 값이 NaN인 경우 true 아닌경우 false반환
+
+				//문자인경우
+			document.write("<h3>점수만 입력하실수 있습니다.<h3>");
+			}else{
+				//숫자인데 점수가 60미만인경우
+			document.write("<h3>학점은 F, 점수는 "+score+"입니다.");
+			}
+		}
+
+
+
+	</script>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>번호</th>
+				<th>이름</th>
+				<th>점수</th>
+				<th>학점</th>
+			</tr>
+		</thead>
+		<tdody>
+			<tr>
+				<td>1</td>
+				<td>권시윤</td>
+				<td><script>
+					document.write(score);
+				</script></td>
+				<td>
+					<script>
+						if(score>=90){
+							document.write("A")
+						}else if(score>=80){
+							document.write("B")
+						}else if(score>=70){
+							document.write("C")
+						}else if(score>=60){
+							document.write("D")
+						}else{
+							document.write("F")
+						}				
+					</script>
+				</td>
+			</tr>
+		</tdody>
+	</table>
+</body>
+</html>

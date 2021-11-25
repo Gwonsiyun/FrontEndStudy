@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>지역변수 전역변수</title>
+</head>
+<body>
+	<script>
+		var x="전역변수X"
+		console.log(x);
+		function sampleFn(){
+			var y="지역변수Y"
+			this.x="전역변수 수정"
+			console.log("함수내");
+			console.log(x);
+			console.log(y);
+		}
+		sampleFn();
+			console.log("함수외");
+			console.log(x);
+			console.log(y);
+
+	</script>
+</body>
+</html>

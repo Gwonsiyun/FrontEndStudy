@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>애니메이션</title>
-	<style>
-		span{
-			transition: all 5s;
-		}
-		span:hover{
-			font-size: 500%;
-			color: red;
-		}
-	</style>
+	<title>월~일</title>
 </head>
 <body>
-	<h3>font-size에 대한 전환</h3>
-	<hr>
-	<p><span>꽝!</span> 글자에 마우스를 올려보세요.</p>
+	<script>
+		var day=prompt("월화수목금토일 중에서 입력하세요");
+		if((day=="월")||(day=="화")||(day=="수")||(day=="목")||(day=="금")){
+			day=day+"요일은 출근";
+		}else if((day=="토")||(day=="일")){
+			day=day+"요일은 휴일";
+		}else{
+			prompt("잘못 입력하셧습니다.새로고침후 월화수목금토일 중에서 입력하세요.");
+		}
+		document.write("<h3>월화수목금토일</h3><hr>"+day);
+	</script>
 </body>
 </html>

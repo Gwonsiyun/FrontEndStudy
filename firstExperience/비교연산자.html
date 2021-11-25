@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>비교 연산</title>
+</head>
+<body>
+	<script>
+		//비교연산자
+		//- 피연사자1 과 피연산자2를 비교하는 연산자
+		//- 피연산자1을 기준으로 조건이 부합하면 true 아니면 false값을 반환함
+
+		//*반환, 결과값을 실행한 곳으로 돌려주는 것을 의미함.
+
+		//모든 피연산자는 데이터(상수)또는 변수가 될 수 있다.
+
+		console.log(10<20);
+		console.log(10<=5);
+		var a=20,b=15;
+		console.log(a>10);
+		console.log(a>=b);
+
+		var result;
+		result= a>=b;
+		console.log(result);
+
+		//동등비교연산자
+		//1. == 데이터타입 상관 없이 값만 비교하는 연산자.
+		var a=10;
+		var b="10";
+		result=(a==b);
+		console.log(result);
+
+		//2. === 데이터타입과 값이 모두 같은지 비교하는 연산자
+		result=a===b;
+		console.log(result);
+
+		//1. != 데이터타입 상관 없이 값이 같지 않으면 true
+		result=a!=b;
+		console.log(result);
+
+		//2. !== 데이터타입 또는 값이 같지 않으면 true
+		result=a!==b;
+		console.log(result);
+	</script>
+</body>
+</html>
