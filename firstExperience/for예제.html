@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>for예제</title>
+</head>
+<body>
+	<script>
+		var value= prompt("양수를 입력하세요");
+		var parseVal= Number(value);
+		var mod;
+
+		if(isNaN(parseVal)){
+			document.write("문자를입력하셧습니다.")
+		}else{
+			mod=parseVal%1;
+			if(mod != 0){
+				document.write("소수를 입력하셧습니다.")
+			}else{
+				if(parseVal>0){
+					document.write(value+"입니다.")
+				}else{
+					document.write("음수를 입력하셧습니다.")
+				}
+			}
+		}
+	</script>
+</body>
+</html>

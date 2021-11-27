@@ -1,11 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>document.write()</title>
+	<title>예제1</title>
 </head>
 <body>
-<script>
-	document.write("<h3>Welcom Home</h3><hr>저희 홈페이지 오신 것을 환영 합니다.")
-</script>
+	<script>
+		/*
+			pronpt()를 사용하여 사용자에게 값을 입력받아옵니다.
+			입력받아온 값이
+			A 이면 "해당학점은 100~90사이의 점수입니다."
+			B 이면 "해당학점은 89~80사이의 점수입니다."
+			C 이면 "해당학점은 79~70사이의 점수입니다."
+			D 이면 "해당학점은 69~60사이의 점수입니다."
+			F 이면 "해당학점은 59~0사이의 점수입니다."
+			그 외 값은 "학점을 입력하세요"
+			출력 되도록 구현하세요
+			출력은 document.write() 사용
+		*/
+		var a=prompt("학점을 입력하십시오.");
+		if (a>=90) {
+			a="a";
+		}else if(a>=80){
+			a="b";		
+		}else if(a>=70){
+			a="c";		
+		}else if(a>=60){
+			a="d";		
+		}else if(a<60){
+			a="f";
+		}
+		switch(a.toUpperCase()){
+			case "A":
+			document.write("당신의 등급은 A 이며 해당등급은 100~90사이의 점수입니다."); break;
+			case "B":
+			document.write("당신의 등급은 B 이며 해당등급은 89~80사이의 점수입니다."); break;
+			case "C":
+			document.write("당신의 등급은 C 이며 해당등급은 79~70사이의 점수입니다."); break;
+			case "D":
+			document.write("당신의 등급은 D 이며 해당등급은 69~60사이의 점수입니다."); break;
+			case "F":
+			document.write("당신의 등급은 F 이며 해당등급은 59~0사이의 점수입니다."); break;
+			default:
+			document.write("학점을 입력하세요");
+		}
+
+	</script>
 </body>
 </html>

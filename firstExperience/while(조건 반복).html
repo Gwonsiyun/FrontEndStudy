@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>while문</title>
+</head>
+<body>
+	<script>
+		//while문
+
+		//0~100까지의 합 구하기 (while문 사용)
+		var i=0;
+		var sum=0;
+		while(i<=100){
+			sum+=i;
+			i++;
+		}
+
+		document.write("0~100까지의 합은"+sum+"<br>");
+
+		var flag=true;
+		i=0;
+		while(flag){
+				document.write("i의 값은 "+i+"입니다.<br>")
+			if(i==10){
+				flag=false;
+
+			}
+				i++;
+		}
+		//prompt()이용하여 사용자에게 값을 입력받아옵니다.
+		//입력한 내용은 화면에 그대로 출력합니다.
+		//이떄, 입력은 사용자가 q문자를 입력할 때 까지 계속 반복합니다.
+		/*var i=prompt("q문자를 입력하면 중지합니다."); //왜 안되나...?
+		while(i!="q"){
+			document.write(i"<br>");
+			i=prompt("q문자를 입력하면 중지합니다.");
+		}*/
+		flag=true;
+		while(flag){
+			var data= prompt("q문자를 입력하면 중지합니다.");
+			if(data=="q"){
+				flag = false;
+			}else{
+				document.write(data+"<br>");
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>반복문을 응용하여 표만들기</title>
+</head>
+<body>
+	<script>
+		var i=0;
+		document.write("<h3>document.write()로 표만들기</h3><hr><table border='1'><tr><th>n</th>");
+		for(i=0;i<=9;i++){
+			document.write("<td>"+i+"</td>");
+		}
+		document.write("</tr><tr><th>n<sup>2</sup></th>");
+		for(i=0;i<=9;i++){
+			document.write("<td>"+i*i+"</td>");
+		}
+		document.write("<tr></table>");
+
+	</script>
+</body>
+</html>

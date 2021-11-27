@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>구구단</title>
+</head>
+<body>
+	<script>
+		var i=0;
+		var value=prompt("몇단까지 볼것인지 쓰시오.");
+		document.write("<table border='1'>");
+		while(i<=9){
+			var j=1;
+			document.write("<tr>");
+			while(j<=value){
+				if(i==0){
+					document.write("<th>"+j+"단</th>");
+				}else{
+					document.write("<td>"+j+"X"+i+"="+j*i+"</td>");
+				}
+				j++;
+			}
+			document.write("</tr>");
+			i++;
+		}
+		document.write("</table>");
+	</script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>for문</title>
+</head>
+<body>
+	<script>
+		/*
+			for문
+			*
+			*
+			*
+			*
+			*
+		*/
+		for(var cnt=2;cnt<=6;cnt++){
+			document.write("*<br>");
+		}
+		/*
+			화면에 for문으 이용하여 출력하세요
+			1
+			2
+			3
+			4
+			5
+		*/
+		for(var number=1;number<=5;number++){
+			document.write(number+"<br>");
+		}
+
+		document.write("<h3>for 문으로 10px~35px 크기 출력</h3><hr>")
+		for(var size=10; size<=35;size+=5){
+			document.write("<span ");
+			document.write("style='font-size:"+size+"px'>");
+			document.write(size+"px");
+			document.write("</span>");
+		}
+		//javascript를 활용하여 ul리스트 출력하기
+		document.write("<ul>");
+		for(var i=1;i<=3;i++){
+			document.write("<li>목록"+i);
+			document.write("<ul>");
+			for(var a=1;a<=2;a++){
+				document.write("<li>목록"+i+"-"+a+"</li>");
+			}
+			document.write("</ul>");
+			document.write("</li>");
+		}
+		document.write("</ul>");
+	</script>
+
+	<ul>
+		<li>목록1</li>
+			<ul>
+				<li>목록1-1</li>
+				<li>목록1-2</li>
+			</ul>
+		<li>목록2</li>
+			<ul>
+				<li>목록2-1</li>
+				<li>목록2-2</li>
+			</ul>
+		<li>목록3</li>
+			<ul>
+				<li>목록3-1</li>
+				<li>목록3-2</li>
+			</ul>
+	</ul>
+	<script>
+		for(var a=2;a<=9;a++){
+			document.write("-----------["+a+"단]------------<br>");
+			for(var b=1;b<=9;b++){
+				document.write(a+"X"+b+"="+a*b+"<br>");
+			}
+		}
+	</script>
+</body>
+</html>

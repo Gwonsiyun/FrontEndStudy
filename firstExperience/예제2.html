@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>월~일</title>
+	<title>switch예제</title>
 </head>
 <body>
 	<script>
-		var day=prompt("월화수목금토일 중에서 입력하세요");
-		if((day=="월")||(day=="화")||(day=="수")||(day=="목")||(day=="금")){
-			day=day+"요일은 출근";
-		}else if((day=="토")||(day=="일")){
-			day=day+"요일은 휴일";
-		}else{
-			prompt("잘못 입력하셧습니다.새로고침후 월화수목금토일 중에서 입력하세요.");
+		var day=prompt("월화수목금토일 중에서 입력하세요.")
+		switch(day){
+			case "월":
+			case "화":
+			case "수":
+			case "목":
+			case "금":
+				document.write(day+"요일은 출근");break;
+			case "토":
+			case "일":
+				document.write(day+"요일은 휴일");break;
+			default:
+				document.write("입력오류입니다.");
 		}
-		document.write("<h3>월화수목금토일</h3><hr>"+day);
 	</script>
 </body>
 </html>
