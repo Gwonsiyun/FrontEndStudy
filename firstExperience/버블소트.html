@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>버블소트</title>
+</head>
+<body>
+	<script>
+		var agg=[1,33,65,27,53];
+		var a=0;
+		for(var j=agg.length-1; j>=1; j--)
+			for(var i=0; i<=j; i++){			
+				if(agg[i]>agg[i+1]){
+					a=agg[i];
+					agg[i]=agg[i+1];
+					agg[i+1]=a;
+				}			
+			}
+		for(var i=0; i<agg.length; i++){
+			document.write(agg[i]+" ");
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>함수</title>
+</head>
+<body>
+	<script>
+		function sum(a){
+			var result = a+10;
+			return result;
+		}
+
+		function sum(){
+			return "두번째 sum()가 호출됐습니다."
+		}
+
+		function sum(a,b){
+			return a+b;
+		}
+
+		var data=sum(10);
+		document.write("10+10="+data);
+
+		var fn1=function(a){
+			document.write("<br>무명함수이고 fn1변수에 할당되었습니다."+a+"<br>");//무명함수의 변수의 우선순위가 더 높다.
+		}
+
+		function fn1(a){
+			document.write("<br>일반함수입니다."+a+"<br>");
+		}
+
+		fn1("test");
+
+		var str="abcdefg";
+		document.write("str 문자열의 길이:"+str.length+"<br>");
+		document.write("a를 x로 치환:"+str.replace("a","x")+"<br>");
+
+		var strA= str.split("d");
+		document.write("d를 기준으로 왼쪽 문자열:"+strA[0]+"<br>");
+		document.write("d를 기준으로 오른쪽 문자열:"+strA[1]+"<br>");
+
+
+	</script>
+</body>
+</html>

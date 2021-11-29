@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ex3</title>
+</head>
+<body>
+	<script>
+		function call(){
+			var value=prompt("숫자를 입력하세요");
+			var number=Number(value);
+
+			if(isNaN(number)){
+				document.write("숫자만 입력하세요.")
+			}else{
+				if(number%1 == 0 && number>0){
+					var last= number%10;
+					var first= 0;
+
+					while(number != 0){
+						first= number%10;
+						number= Math.floor(number/10);
+					}
+					if(first==last){
+						document.write("같음");
+					}else{
+						document.write("다름");
+					}
+				}else{
+					document.write("실수나 음수는 입력할 수 없습니다.");
+				}
+			}
+		}
+		call()
+	</script>
+</body>
+</html>

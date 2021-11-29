@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>continue break</title>
+</head>
+<body>
+	<script>
+		var sum=0;
+		for(var i=1; i<=100; i++){
+			if(i%3 == 0){
+				sum+=i;
+			}
+		}
+		document.write("3의 배수의 합"+sum+"<br>");
+
+		sum=0;
+		for(var i=1; i<=100; i++){
+			if(i%3!=0){
+				continue;
+			}
+			sum+=i;
+		}
+		document.write("3의 배수의 합"+sum+"<br>");
+
+		out : for(var i=1; i<=4; i++){ //out라는 라벨 별칭을 주어 break가 out부분에서 빠져나오도록 함.
+			document.write("------["+i+"단]---------<br>");
+			for(var j=1; j<=9; j++){
+				document.write(i+"x"+j+"="+i*j+"<br>");
+				if(j>=4){
+					break out;
+				}
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>배열</title>
+</head>
+<body>
+	<script>
+		var array1;
+		array1 = [1,2,3,4];
+
+		document.write("2번째로 존재하는 원소 값은"+array1[1]);
+
+		array1[1]=5;
+		document.write("<br>2번째로 존재하는 원소 값은"+array1[1]);
+
+		array1[4]=6;
+		document.write("<br>5번째로 존재하는 원소 값은"+array1[4]);
+
+		array1[6]=8;
+		document.write("<br>6번째로 존재하는 원소 값은"+array1[5]);
+		document.write("<br>7번째로 존재하는 원소 값은"+array1[6]);
+
+		var array2 = [];
+		array2[0]='a';
+		array2[1]='b';
+
+		var array3 = ['a','b', ,'d'];
+		document.write("<br>array3의 index2 원소값은 "+array3[2]);
+
+		document.write("<br>배열의 모든원소 출력하기");
+		var array4=[1,2,3,4,5,6,7,8,9,10];
+
+		for(var i=0; i<array4.length; i++){
+			document.write("<br>array4의 "+i+"번째 인덱스 값은"+array4[i]);
+		}
+
+		var array5 = ["홍길동","홍길우","홍길자","홍길민","홍길수"]
+		//array5에 있는 모든 원소를 5행1열의 테이블로 표현해주세요.
+
+		document.write("<table border=1>");
+		for(var i=0; i<array5.length; i++){
+			document.write("<tr><td>"+array5[i]+"</td></tr>");
+		}
+		document.write("</table>");
+
+		//array4에 있는 모든 원소의 합을 출력하세요.
+		var i=0;
+		var sum=0;
+		while(i<array4.length){
+			sum+=array4[i];
+			i++;
+		}
+		document.write(sum);
+
+	</script>
+</body>
+</html>

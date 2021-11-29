@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>oc07</title>
+	<style>
+	</style>
+</head>
+<body>
+	<h3>라면을 만드는데 필요한 재료</h3>
+	<hr>
+	<script>
+		var itemlist = ["라면","계란","물","파"]
+		document.write("<ul>");
+		for(var i=0; i<itemlist.length; i++){
+			if(i==2){
+				document.write("<li style=background:yellow;>");
+				document.write(itemlist[i]);
+				document.write("</li>");
+			}else{
+				document.write("<li>");
+				document.write(itemlist[i]);
+				document.write("</li>");
+			}
+		}
+		document.write("</ul>");
+	</script>
+</body>
+</html>
