@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>배열 내장 함수 예제</title>
+</head>
+<body>
+	<script>
+		var array1 = ["가","나","다"];
+
+		var array2 = ["라","마"];
+
+		var result = array1.concat("바","사");
+
+		document.write('array1.concat("바","사")->'+result+"<br>");
+		document.write('concat 후 array1->'+array1.join()+"<br>");//concat은 원본에 영향을 주지 않음
+
+		var result = array1.concat(array2);
+		document.write('array1.concat(array2)->'+result+"<br>");
+		document.write('concat 후 array1->'+array1.join()+"<br>");//concat은 원본에 영향을 주지 않음
+
+		result = array1.join("*");//구분문자 가능
+		document.write('array1.join("*")->'+result+'<br>');
+
+		result = array1.join(" 그리고 ");//한글로도 구분문자 가능
+		document.write('array1.join(" 그리고 ")->'+result+'<br>');
+		document.write('join 후 array1->'+array1.join()+"<br>");//join은 원본에 영향을 주지 않음
+
+		result = array1.reverse();//거꾸로 순서 변경
+		document.write('array1.reverse()->'+result+'<br>');
+		document.write('reverse 후 array1->'+array1.join()+"<br>");//reverse는 원본에 영향을 줌
+
+		result = array1.slice(0,2);//범위만 복사후 저장
+		document.write('array1.slice(0,2)->'+result+'<br>');
+		document.write('slice(0,2) 후 array1->'+array1.join()+"<br>");//slice는 원본에 영향을 주지 않음
+
+		result = array1.splice(0,1);//범위를 잘라서 이동
+		document.write('array1.slice(0,2)->'+result+'<br>');
+		document.write('splice(0,1) 후 array1->'+array1.join()+"<br>");//splice는 원본에 영향을 줌
+	</script>
+</body>
+</html>

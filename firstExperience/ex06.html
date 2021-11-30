@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h3>문자열 분할</h3>
+	<hr>
+	<script>
+		function dw(str){
+			document.write(str);
+		}
+		var value=prompt("&로 구분지어 문자열 입력");
+		var value2=value.split("&");
+		for(var i=0; i<value2.length; i++){
+			dw(value2[i]+"<br>");
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		div{
+			display: inline-block; 
+			width: 60px;
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+	<h3>17개의 css2 색이름과 색</h3>	
+	<hr>
+	<script>
+		function dw(str){
+			document.write(str);
+		}
+		var colorNames = ["maroon","red","orange","yellow","olive","purple","fuchsia","white","lime","green"]
+		for(var i=0; i<colorNames.length; i++){
+			dw("<div style='background:"+colorNames[i]+"'>"+colorNames[i]+"</div>");
+		}
+	</script>
+
+</body>
+</html>

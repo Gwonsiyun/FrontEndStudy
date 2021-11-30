@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Date객체 생성</title>
+</head>
+<body>
+	<script>
+		var now = new Date();
+		document.write("현재 날짜 : "+now+"<br>");
+
+		//2021-11-30
+		var year = now.getFullYear();
+		var month = now.getMonth()+1;
+		var day = now.getDate();
+
+		var nowFomat = year + "-" + month + "-" + day;
+
+		document.write("현재 날짜 :"+nowFomat+"<br>");
+
+		var yes = new Date(2021,10,29,10,25);
+		document.write("어제 날짜 :"+yes+"<br>");
+
+		yes = new Date("2021-11-29 10:25");
+		document.write("어제 날짜 :"+yes+"<br>");
+		yes = new Date("2021.11.29 10:25");
+		document.write("어제 날짜 :"+yes+"<br>");
+
+		document.write("<h3>Date()를 활용하여 나의 나이 출력하기</h3>");
+
+		//var me = prompt("태어난 연도(1997)를 입력하세요");
+		var now = new Date();
+		var year = now.getFullYear();
+		var birth = new Date(1997,8,13);
+		var birthYear = birth.getFullYear();
+		var age = year-birthYear+1;
+		document.write("당신이 태어난 연도는 "+birthYear+"이며 나이는 "+age+"입니다.<br>")
+		//document.write("당신이 태어난 연도는 "+me+"이며 나이는 "+(year-me+1)+"입니다.");
+
+		//경과일
+		var result = now.getTime()-birth.getTime();
+
+		document.write("now.getTime->"+now.getTime()+"<br>");
+		document.write("birth.getTime->"+birth.getTime()+"<br>");
+		document.write("now.getTime-birth.getTime->"+result+"<br>");
+
+		result = Math.ceil(result/1000/60/60/24);//소수점 올림처리
+
+		document.write("경과일->"+result+"<br>");
+	</script>
+</body>
+</html>

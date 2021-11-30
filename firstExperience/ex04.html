@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ex04</title>
+</head>
+<body>
+	<h3>일요일은 pink, 다른요일은 gold 배경</h3>
+	<hr>
+	<script>
+		function dw(str){
+			document.write(str)
+		}
+		var day = new Date();
+		var week = 0;
+		switch(day.getDay()){
+			case 1:
+				week = "월"; break;
+			case 2:
+				week = "화"; break;
+			case 3:
+				week = "수"; break;
+			case 4:
+				week = "목"; break;
+			case 5:
+				week = "금"; break;
+			case 6:
+				week = "토"; break;
+			case 7:
+				week = "일";
+		}
+		switch(day.getDay()){
+			case 1:
+			case 2:
+			case 3:
+			case 4:
+			case 5:
+			case 6:
+				document.body.style.backgroundColor = "gold"; break;
+			case 7:
+				document.body.style.backgroundColor = "pink";
+		}
+		dw("오늘 : ");
+		dw(day.getDate()+"일, ");
+		dw(week+"요일");
+	</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script>
+		function dw(str){
+			document.write(str);
+		}
+		var names = new Array("wonsun","jaemoonlee","kitae","gracehwang");
+
+		dw("이름 : ");
+		for(var i=0; i<names.length; i++){
+			dw(names[i]+" ");
+		}
+		dw("<br>가장 긴 이름 : ");
+		var maxlength="wonsun";
+		for(var i=0; i<names.length; i++){
+			if(maxlength.length<names[i].length){
+				maxlength=names[i];
+			}
+		}
+		dw(maxlength);
+		dw("<br>가장 먼저 나오는 이름 : ");
+		var first=names.sort();
+		dw(names[0]);
+		dw("<br>증가순 이름 : "+first.join(" "));
+
+	</script>
+</body>
+</html>

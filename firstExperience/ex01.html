@@ -9,23 +9,38 @@
 	<script>
 		var n=[];
 		for(var i=0;i<10;i++){
-			n[i]=Math.floor(Math.random()*50)+30;	//난수 10개 배열에 저장 30~79사이의 수
+			n[i]=Math.floor(Math.random()*15+1)+15;	//난수 10개 배열에 저장 15~30{(e-s+1)+s}사이의 수
 		}
-		for(var i=0; i<10; i++){
-			document.write(n[i]+" ")//배열 출력
+		for(var i=0; i<n.length; i++){
+			document.write(n[i]+" ");//배열 출력
 		}
 		document.write("<hr>");
 		var big = n[0];
-		for(var i=0; i<10; i++){
+		for(var i=0; i<n.length; i++){//큰 수 찾기
 			if(n[i]>big){
 				big=n[i];
-			}//큰 수 찾기
+			}
 		}
 		document.write("제일 큰 수는 "+big);
-		document.write("hr");
-			//배열 정렬
-		for(var i=0; i<10; i++){
-			//배열 출력
+		document.write("<hr>");
+		/*var a=0;
+		for(var j=n.length-1; j>=1; j--)//버블소트 방식으로 배열 정렬
+			for(var i=0; i<=j; i++){			
+				if(n[i]>n[i+1]){
+					a=n[i];
+					n[i]=n[i+1];
+					n[i+1]=a;
+				}			
+			}*/
+		n.sort(function(a,b){return a-b;});//문자로 비교가 되어 순서가 뒤죽박죽이 됨.
+		/*
+		(1,20,7,33,123)
+		function(a,b)
+		return a-b
+		(1,20) 1-20 = -19 음수이기에 자리를 바꾸지 않음 이 과정을 반복
+		*/
+		for(var i=0; i<n.length; i++){//배열 출력
+			document.write(n[i]+" ");
 		}
 	</script>
 </body>

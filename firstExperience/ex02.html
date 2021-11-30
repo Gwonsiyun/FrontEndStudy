@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>정수 5개 입력받아 역순으로 출력</title>
+</head>
+<body>
+	<h3>정수5개 입력받아 역순으로 출력</h3>
+	<hr>
+	<script>
+		function dw(str){
+			document.write(str)
+		}
+		var value = [];
+		for(var i=0; i<5; i++){
+			value[i]=prompt((i+1)+"번째정수 입력");
+			if(isNaN(value[i])){
+				i--;
+			}else if(value[i]%1 != 0){
+				i--;
+			}
+		}
+		dw("입력된 수의 배열<br>");
+		for(var i=0; i<value.length; i++){
+			dw(value[i]+" ");
+		}
+		dw("<hr>");
+		dw("역순으로 재정렬된 배열<br>");
+		var result=0;
+		result = value.reverse();
+		for(var i=0; i<value.length; i++){
+			dw(result[i]+" ");
+		}
+	</script>
+</body>
+</html>
