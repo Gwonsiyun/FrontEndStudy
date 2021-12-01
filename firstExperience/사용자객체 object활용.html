@@ -1,0 +1,210 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+ 	<title>object 예제</title>
+ </head>
+ <body>
+ 	<script>
+ 		var car = new Object();
+
+ 		//제조사, 차량번호, 색상, 차종 - 프로퍼티(속성)
+ 		//시동을 켜다, 시동을 끄다 - 메소드(동작 or 기능)
+
+ 		car.name = "아우디";
+ 		car.number = "10가1234";
+ 		car.color = "black";
+ 		car.company = "아우디";
+
+ 		car.turnOn = function(){
+ 			return "시동을 켭니다.";
+ 		}
+ 		car.turnOff = function(){
+ 			document.write("시동을 끕니다.");
+ 		}
+
+ 		document.write("자동차 이름은 "+car.name+"<br>");
+ 		document.write("자동차 번호는 "+car.number+"<br>");
+ 		document.write("자동차 제조사는 "+car.company+"<br>"); 
+
+ 		var result = car.turnOn();
+
+ 		document.write("turnOn()의 호출결과 "+result+"<br>");
+
+ 		car.turnOff();
+
+ 		//계산기 사용자 정의 객체를 만들어보세요
+ 		//계산기 기능은 더하기, 뺴기, 곱하기, 나누기 기능이 있습니다.
+ 		//사용자에게 입력받은 두 수를 이용하여 계산기 객체의 각 기능을 호출합니다.
+ 		//사용자에게 값을 입력 받을 때는 prompt()를 사용합니다. 
+
+ 		/*function sum(a,b){
+ 			return a+b;
+ 		}
+ 		function subtract(a,b){
+ 			return a-b;
+ 		}
+ 		function division(a,b){
+ 			return a/b;
+ 		}
+ 		function multiply(a,b){
+ 			return a*b;
+ 		}
+
+ 		var calculator = new Object();
+ 		calculator.sum = sum;
+ 		calculator.subtract = subtract;
+ 		calculator.division = division;
+ 		calculator.multiply = multiply;
+
+ 		var value = prompt("계산기");*/
+ 		var calc = new Object();
+
+ 		calc.add = function(a,b){
+ 			return a+b;
+ 		}
+ 		calc.sub = function(a,b){
+ 			return a-b;
+ 		}
+ 		calc.multi = function(a,b){
+ 			return a*b;
+ 		}
+ 		calc.divide = function(a,b){
+ 			return a/b;
+ 		}
+
+ 		var num1 = Number(prompt("정수를 입력하세요"));
+ 		var num2 = Number(prompt("정수를 입력하세요"));
+
+ 		document.write(num1+"+"+num2+"="+calc.add(num1,num2)+"<br>");
+ 		document.write(num1+"-"+num2+"="+calc.sub(num1,num2)+"<br>");
+ 		document.write(num1+"*"+num2+"="+calc.multi(num1,num2)+"<br>");
+ 		document.write(num1+"/"+num2+"="+calc.divide(num1,num2)+"<br>");
+
+ 		//제조사, 차량번호, 색상, 차종 - 프로퍼티(속성)
+ 		//시동을 켜다, 시동을 끄다 - 메소드(동작 or 기능)
+
+ 		car = {
+ 			company:"벤츠",
+ 			number:"10가1234",
+ 			color:"black",
+ 			name:"sclass",
+ 			turnOn:function(){
+ 				return "시동을 켜다";
+ 			},
+ 			turnOff:function(){
+ 				document.write("시동을 끄다<br>");
+ 			}
+ 		};
+
+ 		document.write("자동차 이름은 "+car.name+"<br>");
+ 		document.write("자동차 번호는 "+car.number+"<br>");
+ 		document.write("자동차 제조사는 "+car.company+"<br>"); 
+
+ 		var result = car.turnOn();
+
+ 		document.write("turnOn()의 호출결과 "+result+"<br>");
+
+ 		car.turnOff();
+
+
+ 		var member1 = {
+ 			name : "회원1",
+ 			addr : "전주시",
+ 			id : "user1",
+ 			password : "1234"
+ 		}
+ 		var member2 = {
+ 			name : "회원2",
+ 			addr : "전주시",
+ 			id : "user2",
+ 			password : "5678"
+ 		}
+ 		var member3 = {
+ 			name : "회원3",
+ 			addr : "전주시",
+ 			id : "user3",
+ 			password : "9012"
+ 		}
+
+ 		var members = [member1,member2,member3];
+ 		//members에 있는 모든 원소의 name 속성값을 출력해 보세요
+
+ 		for(var i=0; i<members.length; i++){
+ 			document.write(members[i].name+"<br>");
+ 		}
+ 		//document.write(members)
+ 				function dw(str){
+ 					document.write(str);
+ 				}
+
+ 		function Board(title,bno,writer,contents,wdate){
+ 			this.title=title;
+ 			this.bno=bno;
+ 			this.writer=writer;
+ 			this.contents=contents;
+ 			this.wdate=wdate;
+ 		}
+
+ 		var boards1 = new Board("첫번째 제목입니다.",1,"작성자1","첫번째 글 내용입니다.","2021-12-01");
+ 		var boards2 = new Board("두번째 제목입니다.",2,"작성자2","두번째 글 내용입니다.","2021-12-01");
+ 		var boards3 = new Board("세번째 제목입니다.",3,"작성자3","세번째 글 내용입니다.","2021-12-01");
+ 		var boards4 = new Board("네번째 제목입니다.",4,"작성자4","네번째 글 내용입니다.","2021-12-01");
+ 		var boards5 = new Board("다섯번째 제목입니다.",5,"작성자5","다섯번째 글 내용입니다.","2021-12-01");
+ 		var boards = [boards1,boards2,boards3,boards4,boards5];
+
+ 			
+ 			
+ 			
+ 			
+ 		
+ 		/*var boards = [
+ 			{title:"첫번째 제목입니다.",bno:1,writer:"작성자1",contents:"첫번째 글 내용입니다.",wdate:"2021-12-01"},
+ 			{title:"두번째 제목입니다.",bno:2,writer:"작성자2",contents:"두번째 글 내용입니다.",wdate:"2021-12-01"},
+ 			{title:"세번째 제목입니다.",bno:3,writer:"작성자3",contents:"세번째 글 내용입니다.",wdate:"2021-12-01"},
+ 			{title:"네번째 제목입니다.",bno:4,writer:"작성자4",contents:"네번째 글 내용입니다.",wdate:"2021-12-01"},
+ 			{title:"다섯번째 제목입니다.",bno:5,writer:"작성자5",contents:"다섯번째 글 내용입니다.",wdate:"2021-12-01"}
+ 		]*/
+
+ 		/*function Board(bno,title,contents,writer,wdate){
+ 			this.bno=bno;
+ 			this.title=title;
+ 			this.contents=contents;
+ 			this.writer=writer;
+ 			this.wdate=wdate;
+ 			this.write=function(){
+ 				document.write("게시글이 작정됩니다.");
+ 			}
+ 		}
+
+ 		var board = new Board(1,"생성자사용 게시글","내용입니다.","작성자1","2021-12-01");
+ 		var board2 = new Board(2,"test","testDate.","작성자1","2021-12-01");
+
+ 		document.write("board의 title->"+board.title+"<br>");
+ 		document.write("board의 title->"+board2.title+"<br>");*/
+
+
+ 	</script>
+ 	<table border="1">
+ 		<thead>
+ 			<th>글번호</th>
+ 			<th>글제목</th>
+ 			<th>작성자</th>
+ 			<th>등록일</th>		
+ 		</thead>
+ 		<tbody>
+ 			<script>
+ 				for(var i=0; i<boards.length; i++){
+ 					dw("<tr>");
+ 					dw("<td>"+boards[i].bno+"</td>");
+ 					dw("<td>"+boards[i].title+"</td>");
+ 					dw("<td>"+boards[i].writer+"</td>");
+ 					dw("<td>"+boards[i].wdate+"</td>");
+ 					dw("</tr>");
+ 				}
+
+
+ 			</script>
+ 		</tbody>
+ 	</table>
+ </body>
+ </htmlO

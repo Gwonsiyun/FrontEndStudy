@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h3>book 객체 만들기</h3>
+	<hr>
+	<script>
+		function dw(str){
+ 			document.write(str);
+ 		}
+
+		/*var book = new Object()			//new Object()사용
+		book.title = "HTML5";
+		book.author = "황기태";
+		book.price = 20000;
+
+		dw("book : "+book.title+","+book.author+","+book.price+"<br>");*/
+
+
+		/*var book = {			//리터럴 표기법사용
+			title:"HTML5",
+			author:"황기태",
+			price:20000
+		}
+
+		dw("book : "+book.title+","+book.author+","+book.price+"<br>");*/
+
+
+		function Book(title,author,price){		//프로토타입 Book를 만들고 book객체 출력
+			this.title=title;
+			this.author=author;
+			this.price=price;
+		}
+		var book = new Book("HTML5","황기태",20000);
+		
+		dw("book : "+book.title+","+book.author+","+book.price+"<br>");
+	</script>
+</body>
+</html>

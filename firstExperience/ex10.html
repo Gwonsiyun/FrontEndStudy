@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script>
+		function dw(str){
+ 			document.write(str);
+ 		}
+	</script>
+</head>
+<body>
+	<h3>book 객체 배열 만들기</h3>
+	<hr>
+	<script>
+		function Book(title,author,price){
+			this.title=title;
+			this.author=author;
+			this.price=price;
+		}
+		var bookArrey=[];
+		var mostbook;
+		var mostprice=0;
+		for(var i=0; i<5; i++){
+			var value=prompt("콤마(,)로 분리하면서 책제목, 저자, 가격 순으로 입력");
+			var valueArray=value.split(",");
+			/*
+			var book=new Object()
+				book.title=valueArray[0].trim();
+				book.author=valueArray[1].trim();
+				book.price=Number(valueArray[2].trim());
+			*/
+			
+			var book={
+				title:valueArray[0],
+				author:valueArray[1],
+				price:Number(valueArray[2])
+			}
+			bookArrey[i]=book;
+			/*
+			var book= new Book(valueArray[0].trim(),valueArray[1].trim(),valueArray[2].trim());
+			bookArrey[i]=book;
+			*/
+		}
+		for(var i=0; i<bookArrey.length; i++){
+			dw(bookArrey[i].title+", "+bookArrey[i].author+", "+bookArrey[i].price+"<br>");
+		}
+		dw("<hr>");
+		for(var i=0; i<bookArrey.length; i++){
+			if(mostprice<bookArrey[i].price){
+				mostprice=bookArrey[i].price;
+				mostbook=bookArrey[i].title;
+			}
+		}
+		dw("가장 가격이 비싼 책은 "+mostbook);
+	</script>
+</body>
+</html>
