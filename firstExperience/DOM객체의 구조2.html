@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DOM 예제</title>
+	<style>
+		#d1{
+			color: red;
+			font-size: 20px;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<div id="d1">id 가 d1일 때만 css가 적용됩니다.</div>
+	<div class="div">id 가 d1일 때만 css가 적용됩니다.</div>
+	<div class="div">id 가 d1일 때만 css가 적용됩니다.</div>
+	<div class="div">id 가 d1일 때만 css가 적용됩니다.</div>
+	<div id="append">
+		클릭하면 아래 자식요소가 추가됩니다.
+	</div>
+
+	<button onclick="changeFn()"> id값 변경 </button>
+	<button onclick="changeBack()"> 배경색 변경 </button>
+	<button onclick="findDiv()">class div 찾기</button>
+	<script>
+
+		var appendDiv = document.getElementById("append");		//해석 부탁!!!!
+		appendDiv.onclick = function(){
+			var innerHTML=this.innerHTML;		//변수innerHTML에 현재(동작하고있는곳)내용을 데이터로 넣어줌
+			console.log(innerHTML);
+			var html = "<span style='color:red;'>추가되었습니다.</span>";
+			innerHTML+=html;
+			this.innerHTML = innerHTML;
+		}
+
+
+		function changeFn(){
+			var div=document.getElementById("d1");
+			div.id = "d2";
+		}
+		function changeBack(){
+			/*var div=document.getElementById("d1");*/
+			var divs=document.getElementsByTagName("div");//Elements로 찾는이유는 div가 여러개일 경우에도 가져오기 위해
+			var div= divs[0];
+			div.style.backgroundColor="yellow";		//css에서 background-color이었던걸 -를 빼고 color을 Color로 대문자로 변경
+
+		}
+		function findDiv(){
+			var classDivs = document.getElementsByClassName("div");
+			console.log(classDivs);
+			for(var i=0; i<classDivs.length; i++){		//배열로 찾아오기 때문에 적용을 시키려면 인덱스로 하나하나 적용시켜야함.
+				classDivs[i].style.border = "2px solid black";
+			}
+		}
+	</script>
+</body>
+</html>

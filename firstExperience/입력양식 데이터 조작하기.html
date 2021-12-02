@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>입력양식 데이터 조작하기</title>
+</head>
+<body>
+	<input type="text" id="t1" value="초기값">
+	<span style="display:none;color:red;">필수입력</span>
+	<button>클릭</button>
+	<div>
+		button을 클릭하면 text박스에 입력 된 값이 여기로 출력됩니다.
+	</div>
+	<script>
+		var button=document.getElementsByTagName("button")[0];
+		button.onclick=function(){
+			var textBox = document.getElementById("t1");
+			var value = textBox.value;
+			var div = document.getElementsByTagName("div")[0];
+			div.innerHTML=value;										//textBox내용이 div로 들어감
+			textBox.value="";
+		}
+		var textBox = document.getElementById("t1");
+		textBox.onblur=function(){
+			//alert("커서 벗어남");
+			var value=this.value;
+			if(value==""){
+				var nextSpan=this.nextElementSibling;
+				console.log(nextSpan);
+				nextSpan.style.display="inline";
+			}
+		}
+		textBox.onchange = function(){
+			alert("변경됨");
+		}
+	</script>
+	<hr>
+	<input type="checkbox" id="check1">
+	<script>
+		var checkbox=document.getElementById("check1");
+		checkbox.onchange=function(){
+			alert("변경됨");
+		}
+	</script>
+</body>
+</html>

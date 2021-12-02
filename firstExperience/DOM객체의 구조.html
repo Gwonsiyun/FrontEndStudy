@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DOM 객체</title>
+</head>
+<body>
+	<p id="firstP" class="test" style="color:blue; background:yellow;" onclick="this.style.color='teal'">
+		이것은 <span style="color: red;">문장입니다.<span style="color: red;">문장입니다.</span></span>
+		이것은 <span style="color: red;">문장입니다..2</span>
+	</p>
+	<div id="firstP">
+		이것은 div입니다.
+	</div>
+	<script>
+		var p=document.getElementById("firtsP");						//변수p에 Id가 firstP인요소를 넣어준다.(주소개념?)				물어불것!!!!!!!!
+		console.log(p);
+		var id=p.id;
+		document.write("<div>p의 id속성 값은 "+id+"</div>");
+		document.write("<div>p의 class속성 값은 "+p.class+"</div>");		//~.~~로는 모든 속성에 접근할 수는 없다. 다른방식으로는 가능
+		document.write("<div>p의 태그 명은 "+p.tagName+"</div>");		//tagName(태그명)
+		document.write("<div>p의 innerHTML은 "+p.innerHTML+"</div>");	//innerHTML(내용)
+		console.log(p.innerHTML);										//공백이 그대로 인식되어 탭으로 인한 공백도 출력됨.
+		console.log(p.innerHTML.trim());								//.trim(공백제거)로 공백을 제거해준 모습
+		document.write("<div>p의 onclick은 "+p.onclick+"</div>");
+		document.write("<div>p의 자식요소 갯수는 "+p.childElementCount+"</div>");//child(자식)Element(태그,요소)Conut(갯수) 자식만 해당 자손은 해당없음
+	</script>
+</body>
+</html>
