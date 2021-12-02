@@ -1,46 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>난수</title>
+	<title>라면을 끓이는 순서</title>
 </head>
 <body>
-	<h3>난수 10개 생성</h3>
+	<h3>라면을 끓이는 순서</h3>
 	<hr>
+	<ol type="A">
+		<li>물을 끓인다.</li>
+		<li>라면과 스프를 넣는다.</li>
+		<li>파를 썰어 넣는다.</li>
+		<li>5분 후 <strong>맛있게</strong> 먹는다.</li>
+	</ol>
 	<script>
-		var n=[];
-		for(var i=0;i<10;i++){
-			n[i]=Math.floor(Math.random()*15+1)+15;	//난수 10개 배열에 저장 15~30{(e-s+1)+s}사이의 수
+		var lis = document.getElementsByTagName("li");		//변수 lis를 선언 배열의 데이터에 li태그를 가진 데이터를 넣음
+		for(var i=0; i<lis.length; i++){					//변수 lis의 배열갯수 만큼 동작하는 반복문
+			lis[i].style.color="green";						//변수 lis의 인덱스 i번째에 있는 글자의 색을 초록으로 바꿈
 		}
-		for(var i=0; i<n.length; i++){
-			document.write(n[i]+" ");//배열 출력
-		}
-		document.write("<hr>");
-		var big = n[0];
-		for(var i=0; i<n.length; i++){//큰 수 찾기
-			if(n[i]>big){
-				big=n[i];
+		var ol = document.getElementsByTagName("ol")[0];	//변수 ol을 선언 ol태그를 가진 요소중 0번째의 데이터를 ol의 데이터 값으로 넣음
+		ol.onclick=function(){								//변수ol의 원본 데이터값을 가진 요소가 클릭 되었을때 함수를 실행함
+			ol.style.background="yellowgreen";				//변수ol의 배경색을 옐로우그린으로 바꿈
+			for(var i=0; i<lis.length; i++){				//변수 lis의 배열 갯수만큼 동작하는 반복문
+				lis[i].style.color="black";					//변수 lis의 인덱스 i번째에 있는 글자의 색을 검정으로 바꿈
 			}
-		}
-		document.write("제일 큰 수는 "+big);
-		document.write("<hr>");
-		/*var a=0;
-		for(var j=n.length-1; j>=1; j--)//버블소트 방식으로 배열 정렬
-			for(var i=0; i<=j; i++){			
-				if(n[i]>n[i+1]){
-					a=n[i];
-					n[i]=n[i+1];
-					n[i+1]=a;
-				}			
-			}*/
-		n.sort(function(a,b){return a-b;});//문자로 비교가 되어 순서가 뒤죽박죽이 됨.
-		/*
-		(1,20,7,33,123)
-		function(a,b)
-		return a-b
-		(1,20) 1-20 = -19 음수이기에 자리를 바꾸지 않음 이 과정을 반복
-		*/
-		for(var i=0; i<n.length; i++){//배열 출력
-			document.write(n[i]+" ");
 		}
 	</script>
 </body>

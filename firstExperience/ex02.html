@@ -1,34 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>정수 5개 입력받아 역순으로 출력</title>
+	<title>자바스크립트 연습</title>
 </head>
 <body>
-	<h3>정수5개 입력받아 역순으로 출력</h3>
+	<h3>자바스크립트란?
+		<button>border</button>
+		<button>p</button>
+	</h3>
 	<hr>
+	<p>자바스크립트는 웹 프로그래밍 언어로서 웹페이지를 동적 변경시킬 수 있다.</p>
+	<p><span id="mySpan">C 언어</span>를 아는 사용자는 빠르게 학습할 수 있다.</p>
+	<p>이벤트 등 GUI 프로그래밍에 필요한 요소들이 있어 학습에 약간의 어려움이 있다.</p>
 	<script>
-		function dw(str){
-			document.write(str)
+		var border=document.getElementsByTagName("button")[0];
+		var p=document.getElementsByTagName("button")[1];
+		border.onclick=function(){
+			var mySpan=document.getElementsByTagName("span")[0];
+			mySpan.style.border="2px dotted violet";
 		}
-		var value = [];
-		for(var i=0; i<5; i++){
-			value[i]=prompt((i+1)+"번째정수 입력");
-			if(isNaN(value[i])){
-				i--;
-			}else if(value[i]%1 != 0){
-				i--;
-			}
-		}
-		dw("입력된 수의 배열<br>");
-		for(var i=0; i<value.length; i++){
-			dw(value[i]+" ");
-		}
-		dw("<hr>");
-		dw("역순으로 재정렬된 배열<br>");
-		var result=0;
-		result = value.reverse();
-		for(var i=0; i<value.length; i++){
-			dw(result[i]+" ");
+		p.onclick=function(){
+			var n=document.getElementsByTagName("p");
+			alert("<p> 태그의 개수는 "+n.length);
 		}
 	</script>
 </body>

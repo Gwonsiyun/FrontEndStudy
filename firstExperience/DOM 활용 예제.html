@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h3>class가 c1인 요소중에 id가 here인 요소에만 텍스트 빨간색 이고 class가 c1인 모든요송는 배경 노란색을 입혀주세요</h3>
+	<div class="c1">1</div>
+	<div class="c1">2</div>
+	<div id="d1">3</div>
+	<div class="c1" id="here">4</div>
+	<div class="c1">5</div>
+	<script>
+		//여기에 작성
+		var c1= document.getElementsByClassName("c1");
+		for(var i=0; i<c1.length; i++){
+			c1[i].style.background="yellow";
+			if("here"==c1[i].id){
+				c1[i].style.color="red";
+			}
+		}
+		/*var here=document.getElementById("here");
+		here.style.color="red";*/
+	</script>
+</body>
+</html>
