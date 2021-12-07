@@ -1,33 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-	<style>
-		div{
-			display: inline-block;
-			width: 150px;
-			padding: 10px;
-		}
-	</style>
+	<title>이벤트 객체의 target</title>
+	<script>
+		window.onload = function(){
+			var lis=document.getElementsByTagName("li");
+			console.log(lis);
+			console.log(lis.length);
+			for(var i=0; i<lis.length; i++){
+				lis[i].onclick=function(){
+					this.style.fontSize="1.3em";
+					console.log(lis[i]);
+				}
+			}
+        }
+	</script>
 </head>
 <body>
-	<h3>16개의 랜덤한 색 만들기</h3>
+	<h3>아이템을 클릭하면 1.3배 크기로</h3>
 	<hr>
+	<p>여름 방학 떄 하고 싶은 것들</p>
+	<ul>
+		<li>자전거로 대한민국 일주</li>
+		<li>책 100권 읽기</li>
+		<li>철인 3종 경기 준비</li>
+		<li>자바스크립트 정복</li>
+	</ul>
 	<script>
-		function dw(str){
-			document.write(str);
-		}
-		var r=[];
-		var g=[];
-		var b=[];
-		for(var i=0; i<16; i++){
-			r[i]=Math.floor(Math.random()*256);
-			g[i]=Math.floor(Math.random()*256);
-			b[i]=Math.floor(Math.random()*256);
-		}
-		for(var i=0; i<r.length; i++){
-			dw("<div style='background:rgb("+r[i]+","+g[i]+","+b[i]+");'>"+"rgb("+r[i]+","+g[i]+","+b[i]+")</div>");
-		}
 	</script>
 </body>
 </html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>폼요소 이벤트 예제1</title>
+	<script>
+		function focusFn(obj){
+			//함수가 호출된 버튼의 텍스트가 t1인 경우 t1 텍스트 바스에 focus
+			//함수가 호출된 버튼의 텍스트가 t2인 경우 t2 텍스트 바스에 focus
+			var text = obj.textContent;
+			if(text == "t1"){
+				//onfocus는 dom객체가 focus를 얻었을 때 발생하는 이벤트 속성
+				//focus()는 dom객체에게 focus를 주는 메소드(기능)
+				document.getElementById("t1").focus()
+			}else if(text == "t2"){
+				document.getElementById("t2").focus()
+			}
+		}
+		function changeColor(obj,color){
+			obj.style.color=color;
+		}
+		function inSpan(obj){
+			var span=document.createElement("span");
+			span.innerHTML="텍스트를 입력해 주세요.";
+			span.style.color="red";
+			obj.parentElement.appendChild(span);
+		}
+		function removeSpan(obj){
+			var span = obj.parentElement.getElementsByTagName("span")[0];//본인->부모->에 속해있는 테그네임 span인 객체
+			obj.parentElement.removeChild(span);
+		}
+	</script>
+</head>
+<body>
+	<div>
+		t1 :<input type="text" id="t1" onfocus="changeColor(this,'red'); inSpan(this)" onblur="changeColor(this,'black'); removeSpan(this)">
+	</div>
+	<div>
+		t2 :<input type="text" id="t2" onfocus="changeColor(this,'red'); inSpan(this)" onblur="changeColor(this,'black'); removeSpan(this)">
+	</div>
+	<button onclick="focusFn(this)">t1</button>
+	<button onclick="focusFn(this)">t2</button>
+
+	<!--
+		텍스트 입력 양식에 각각 포커스가 들어갔을떄는 현재 위치 옆에 span추가
+		(span의 내용은 '텍스트를 입력해 주세요')
+		양식에서 포커스를 잃었을 경우에는 span을 다시 제거 하도록 구현
+	!-->
+
+</body>
+</html>

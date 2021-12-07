@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script>
+		function event(){
+			if(div.event=="onmouseover"){
+				
+
+			}
+		}
+	</script>
+</head>
+<body>
+	<div style="width: 200px; height: 200px; border: 1px solid black;" id="box" onmouseover="this.style.background='orange'" onmouseout="this.style.background='white'" onmousedown="this.style.background='red'" onwheel="wheelFn(event,this)">
+		<!--
+			영역 안에 마우스가 들어왔을 경우에는 주황색 배경 영역에서 마우스가 벗어 났을 때는 하얀색 배경 마우스로 누르는 순간에는 빨간색 휠을 아래로 굴리면 초록색 위로 굴리면 노란색
+		!-->
+	</div>
+	<script>
+		function wheelFn(e,obj){
+			if(e.wheelDelta >= 0){
+				obj.style.background="yellow";
+			}else{
+				obj.style.background="green";
+			}
+		}
+		var div=document.getElementById("box");
+		div.onmouseover=event();
+		div.onmouseout=event();
+		div.onclick=event();
+		div.onwheel=event();
+	</script>
+</body>
+</html>

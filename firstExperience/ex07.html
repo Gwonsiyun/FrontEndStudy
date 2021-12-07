@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-	<style>
-		div{
-			display: inline-block; 
-			width: 60px;
-			padding: 10px;
-		}
-	</style>
-</head>
-<body>
-	<h3>17개의 css2 색이름과 색</h3>	
-	<hr>
+	<title>이벤트 객체의 target</title>
 	<script>
-		function dw(str){
-			document.write(str);
+		window.onmouseover = function(e){
+			console.log(e.target.tagName);
+			if(e.target.tagName=="SPAN"){
+				e.target.style.textDecoration="underline";
+				console.log(this);
+			}
 		}
-		var colorNames = ["maroon","red","orange","yellow","olive","purple","fuchsia","white","lime","green"]
-		for(var i=0; i<colorNames.length; i++){
-			dw("<div style='background:"+colorNames[i]+"'>"+colorNames[i]+"</div>");
+		window.onmouseout = function(e){
+			if(e.target.tagName=="SPAN"){
+				e.target.style.textDecoration="none";
+				console.log(this);
+			}
 		}
 	</script>
-
+</head>
+<body>
+	<h3>span 태그에만 onmouseover/onmouseout</h3>
+	<hr>
+	<p>span 태그에 대해서만 <span>마우스</span>가 올라올 때 밑줄이 그어지고 <span>마우스</span>가 내려갈 떄 밑줄이 사라지도록 <span>자바스크립트 코드</span>를 작성한다.</p>
 </body>
 </html>

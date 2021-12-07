@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>keyboard 관련 이벤트</title>
+	<script>
+		function phoneFn(e,obj){
+			console.log(e.keyCode);
+			if(e.keyCode>=48 && e.keyCode<=57){
+				return true;
+			}else{
+				return false;
+			}
+		}
+		function numberFn(obj){
+			var value = obj.value;
+			//정규표현식 - 문자열의 특정 문자 패턴을 검사할 때 사용하는 식
+			//var reg = /[a-zA-Zㄱ-ㅎ가-핳]/g;//a~z && A~Z && ㄱ~ㅎ && 가~핳
+			var reg = /[^0-9]/g;// 0~9가 아닌문자 찾기  ^는 아닌문자를 찾는다.
+
+			console.log(reg.test(value));
+			obj.value = value.replace(/[^0-9]/g,"");//정규식을 사용할때는 검색해서 쓰자. 예)자바스크립트 휴대폰번호 정규식
+		}
+		/*
+			keydown,keypress 이벤트는 키보드가 눌릴때 발생하는 이벤트이기 때문에 입력 할지 말지에 대한 여부를 제어할 수 있다.
+			(return값을 이용하요)
+			keyup 이벤트는 키보드가 눌렸다 떼어질때 발생하는 이벤트이기 때문에 입력에 대한 제어는 할 수 없지만 입력된 값에 대해서는 제어할 수 있다.
+		*/
+	</script>
+</head>
+<body>
+	<input type="text" onkeydown="alert('keydown')">모든 키에 대해 키가 눌러지는순간 호출<br>
+	<input type="text" onkeypress="alert('keypress')">영문,엔터,스페이스바,ESC에 대해서만 호출<br>
+	<input type="text" onkeyup="alert('keyup')"><br>
+
+	<input type="text" name="number" maxlength="4" onkeypress="return phoneFn(event,this)"><br>
+
+	<input type="text" onkeyup="numberFn(this)"><br>
+
+	<br>
+	한글만 입력가능 : 
+	<input type="text" id="han"><button onclick="check1()">검사</button>
+	<span id="hanresult"></span>
+	<script>
+		function check1(){
+			var value=document.getElementById("han").value;
+			var reg = /[^ㄱ-ㅎ가-힣]/g;	//문자열 중에 한글이 아닌 문자가 존재하면 true
+			if(reg.test(value)){
+				document.getElementById("hanresult").innerHTML = "한글이 아닌 문자 포함!"
+			}else{
+				document.getElementById("hanresult").innerHTML = "ok!"
+			}
+			var reg = /[대]/g;
+			document.getElementById("han").value = value.replace(reg,"소");
+		}
+	</script>
+</body>
+</html>

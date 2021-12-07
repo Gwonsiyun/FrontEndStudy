@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>addEventListener()메소드 사용하여 이벤트 등록하기</title>
+</head>
+<body>
+	<p>
+		마우스 올리면 orchid 색상으로 변경
+	</p>
+	<script>
+		var p=document.getElementsByTagName('p')[0];
+		function out(){
+			p.style.backgroundColor="white";
+		}
+		p.addEventListener("mouseover",function(){
+			this.style.backgroundColor="orchid";
+		})
+
+		p.addEventListener("mouseout",out);
+	</script>
+</body>
+</html>

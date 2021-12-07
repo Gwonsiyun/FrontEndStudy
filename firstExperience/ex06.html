@@ -2,19 +2,24 @@
 <html>
 <head>
 	<title></title>
+	<script>
+		function wheelFn(obj){
+			if(event.wheelDelta>0){
+				obj.width*=0.9;
+				console.log(obj.width);
+			}else{
+				obj.width*=1.1;
+			}
+		}
+	</script>
 </head>
 <body>
-	<h3>문자열 분할</h3>
+	<h3>마우스 휠을 이용한 이미지 확대/축소</h3>
 	<hr>
+	<p>이미지 위에 휠을 위로 굴리면 이미지가 축소되고 아래로 굴리면 이미지가 확대됩니다.</p>
+	<img src="../../../1.png" alt="스폰지밥" width="100px" onwheel="wheelFn(this)">
 	<script>
-		function dw(str){
-			document.write(str);
-		}
-		var value=prompt("&로 구분지어 문자열 입력");
-		var value2=value.split("&");
-		for(var i=0; i<value2.length; i++){
-			dw(value2[i]+"<br>");
-		}
+		console.log(document.getElementsByTagName("img")[0].width);
 	</script>
 </body>
 </html>

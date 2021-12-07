@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<input type="radio" name="r1" value="r1_1">r1_1
+	<input type="radio" name="r1" value="r1_2">r1_2
+
+	<input type="radio" name="r2" value="r2_1">r2_1
+	<input type="radio" name="r2" value="r2_2">r2_2
+
+	<br>
+	<button onclick="radioChk()">클릭</button>
+	<button onclick="checkOne()">1</button>
+	<button onclick="checkTwo()">2</button>
+	<script>
+		var r1=document.getElementsByName("r1");
+		var r2=document.getElementsByName("r2");
+		console.log("r1의 길이:"+r1.length);
+		console.log("r2의 길이:"+r2.length);
+		function radioChk(){
+			var r1_chk;
+			var r2_chk;
+			for(var i=0; i<r1.length; i++){
+				if(r1[i].checked == true){		//checked가 되어있으면 체크됨
+					r1_chk = r1[i];
+					break;
+				}
+			}	
+			for(var i=0; i<r2.length; i++){
+				if(r1[i].checked == true){
+					r2_chk=r2[i];
+					break;
+				}
+			}
+			console.log("현재 체크된 r1의 값은"+r1_chk.value);
+			console.log("현재 체크된 r2의 값은"+r2_chk.value);
+		}
+		function checkOne(){
+			r1[0].checked=true;
+			r2[0].checked=true;
+		}		
+		function checkTwo(){
+			r1[1].checked=true;
+			r2[1].checked=true;
+		}
+	</script>
+</body>
+</html>

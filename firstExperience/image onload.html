@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>image load 이벤트</title>
+	<script>
+		function changeImage(){
+			var img=document.getElementsByTagName("img")[0];
+			img.onload=function(){			//이미지가 다 로드 되었을때 실행한다.
+				var width = img.width;
+				var height = img.height;
+				document.getElementById("result").innerHTML=width+"/"+height;
+			}
+			img.src = "../../2.png";
+		}
+	</script>
+</head>
+<body>
+	<img src="../../1.png" alt="스폰지밥">
+	<button onclick="changeImage()">변경</button>
+	<div id="result">
+		
+	</div>
+</body>
+</html>

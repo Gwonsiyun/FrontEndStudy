@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>마우스 관련 이벤트2</title>
+	<style>
+		#box{
+			width: 250px;
+			height: 250px;
+			border: 1px solid black;
+			background: yellow;
+		}
+		#local{
+			width: 100px;
+			height: 150px;
+			border: 1px solid black;
+			background: lightskyblue;
+			margin-top:10px; 
+		}
+	</style>
+	<script>
+		function moveFn(e){
+			var text="";
+			text += "버튼 : "+e.button + "<br>";
+			text += "screenX : "+e.screenX+"<br>screenY : "+e.screenY+"<br>";	//화면 기준
+			text += "clientX : "+e.clientX+"<br>clientY : "+e.clientY+"<br>";	//웹페이지 기준
+			text += "offsetX : "+e.offsetX+"<br>offsetY : "+e.offsetY+"<br>";	//자기자신 기준
+			text += "x : "+e.x+"<br>y : "+e.y+"<br>";							//부모기준
+
+			document.getElementById("local").innerHTML=text;
+		}
+		document.oncontextmenu = function(){									//페이지에서 우클릭 막기
+			return false;
+		}
+	</script>
+</head>
+<body>
+	<div id="box" onmousemove="moveFn(event)">
+		
+	</div>
+	<div id="local">
+		
+	</div>
+</body>
+</html>

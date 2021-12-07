@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<select size="2" onchange="changeSel(this)">
+		<option value="1">목록1</option>
+		<option value="2">목록2</option>
+		<option value="3">목록3</option>
+		<option value="4">목록4</option>
+	</select>
+	<script>
+		function changeSel(obj){
+			//alert("상태변경!");
+
+			var selectIndex = obj.selectedIndex;
+			console.log("현재 선택된 옵션의 index는 "+selectIndex);
+
+			var text = obj.options[selectIndex].text;
+			console.log("현재 선택된 옵션의 text는 "+text);
+
+			//3번째 인덱스에 있는 옵션이 선택되면 화면에 3! 출력
+			if(obj.options[3].selected){
+				document.write("<h3>3!</h3>");
+			}
+		}
+	</script>
+</body>
+</html>

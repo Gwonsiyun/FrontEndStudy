@@ -1,32 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-</head>
-<body>
+	<title>더블 클릭시 색상변경</title>
+	<style>
+		body{
+			width: 100%;
+			height: 100vh;
+		}
+	</style>
 	<script>
-		function dw(str){
-			document.write(str);
+		function a(){
+			document.body.style.backgroundColor="rgb("+Math.floor(Math.random()*256)+","+Math.floor(Math.random()*256)+","+Math.floor(Math.random()*256)+")";
 		}
-		var names = new Array("wonsun","jaemoonlee","kitae","gracehwang");
-
-		dw("이름 : ");
-		for(var i=0; i<names.length; i++){
-			dw(names[i]+" ");
-		}
-		dw("<br>가장 긴 이름 : ");
-		var maxlength="wonsun";
-		for(var i=0; i<names.length; i++){
-			if(maxlength.length<names[i].length){
-				maxlength=names[i];
-			}
-		}
-		dw(maxlength);
-		dw("<br>가장 먼저 나오는 이름 : ");
-		var first=names.sort();
-		dw(names[0]);
-		dw("<br>증가순 이름 : "+first.join(" "));
-
 	</script>
+</head>
+<body ondblclick="a()">
+	<h3>바탕 아무곳에나 더블 클릭</h3>
+	<hr>
+	<p>바탕 아무곳이나 <strong>더블클릭</strong>하면 배경색이 랜덤하게 변경합니다.</p>
+
 </body>
 </html>

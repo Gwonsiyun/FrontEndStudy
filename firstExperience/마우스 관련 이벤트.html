@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>마우스 관련 이벤트 종류</title>
+	<style>
+		#imgD{
+			height: 150px;
+			overflow: auto;
+		}
+	</style>
+	<script>
+		function down(obj){
+			obj.style.fontStyle = "ltalic";
+		}
+		function over(obj){
+			obj.style.color="red";
+		}
+		function wheel(e,obj){
+			alert("휠 발생!");
+			obj.getElementsByTagName("span")[0].textContent=e.wheelDelta;
+		}
+	</script>
+</head>
+<body>
+	<div onmouseover="over(this)">
+		마우스 관련
+		<span onmousedown="down(this)">이벤트가 발생합니다.</span>
+	</div>
+	<div id="imgD" onwheel="wheel(event,this)">
+		<img src="../../1.png" alt="이미지가 없습니다.">
+		<span></span>
+	</div>
+
+	
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>this 활용하기</title>
+	<script>
+		var ftd;
+		function titleFn(obj){
+			var tr=obj.parentElement.parentElement;
+			ftd=tr.firstElementChild;
+			var title=ftd.innerHTML;
+			document.getElementById("title").value=title;
+		}
+		function ch(obj){
+			var value=document.getElementById("title");
+			ftd.textContent=value.value;
+		}
+	</script>
+</head>
+<body>
+	<h2>this 활용하기</h2>
+	<hr>
+	<table border="1">
+		<tr>
+			<td>첫번째 제목입니다.</td>
+			<td><button onclick="titleFn(this)">수정</button></td>
+		</tr>
+		<tr>
+			<td>두번째 제목입니다.</td>
+			<td><button onclick="titleFn(this)">수정</button></td>
+		</tr>
+		<tr>
+			<td>세번째 제목입니다.</td>
+			<td><button onclick="titleFn(this)">수정</button></td>
+		</tr>
+		<tr>
+			<td>네번째 제목입니다.</td>
+			<td><button onclick="titleFn(this)">수정</button></td>
+		</tr>
+	</table>
+	<p>
+		<input type="text" id="title">
+		<button onclick="ch(this)">확인</button>
+	</p>
+	<script>
+		/*var buttons=document.getElementsByTagName("button");
+		for(var i=0; i<buttons.length; i++){
+			buttons[i].onclick=function(){
+				var tr=this.parentElement.parentElement;
+				var ftd=tr.firstElementChild;
+				var value=ftd.innerHTML;
+				document.getElementById("title").value=value;
+				
+				function ch(){
+					var parent=this.parentElement;
+					var value=parent.firstElementChild;
+					ftd.innerHTML=value.value;
+				}
+			}
+		}*/
+
+
+	</script>
+	</body>
+</html>
