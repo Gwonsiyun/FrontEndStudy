@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>form onSubmit 예제</title>
+	<script>
+		function checkFn(){
+			var value = document.getElementsByName("t1")[0].value;
+			if(value==""){
+				return false;
+			}else{
+				return true;
+			}
+		}
+		function checkFn2(){
+			//submit버튼이 onclick 이벤트에 return false이면 무조건 전송이 되지 않으므로 호출하고 있는 함수 내에서 강제로 form을 찾아 전송을 해야한다.
+			var value = document.getElementsByName("t2")[0].value;
+			if(value!=""){
+				document.frm2.submit();
+			}
+		}
+	</script>
+</head>
+<body>
+	<form name="frm1" onsubmit="return checkFn()">
+		<input type="text" name="t1">
+		<input type="Submit" >
+	</form>
+	<form name="frm2">
+		<input type="text" name="t2">
+		<input type="Submit" onclick="checkFn2();return false;">
+	</form>
+
+</body>
+</html>
