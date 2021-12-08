@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery 사용하기</title>
+	<script src="../jquery-3.6.0.min.js"></script><!-- pc에 있는 jQuery파일을 가져와서 적용 버전확인 기존에 쓰던게 바뀌었는지 확인할것 !-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script><!-- 사이트에서 jQuery 참조함(인터넷 필수 인터넷이 접속이 안되어있으면 불가)!-->
+	<script>
+		//$는 jQurey의 약자
+		$(document).ready(function(){	//onload와 같다고보면됨
+
+			$("*").css("border","1px solid black");
+
+			$("#p1").css("backgroundColor","yellow");	//blckground-color -> backgroundColor
+
+			$("div").css("backgroundColor","pink");
+
+			$(".d1,p,.d2").css("color","red");
+
+			$("#id div.class").css("color","orange");	//id가 id인 요소의 후손중 div의 class가 class인 객체를 찾아서 적용 (자손선택자)
+		});
+
+	</script>
+</head>
+<body>
+	<p id="p1">p태그입니다.</p>
+	<div>div태그입니다.</div>
+	<div>div태그입니다.</div>
+	<div class="d1">div태그입니다.</div>
+	<div class="d1">div태그입니다.</div>
+	<div class="d2">div태그입니다.</div>
+
+	<div id="id">
+		<div class="class">
+			class가 calss
+		</div>
+		<p class="class">
+			class가 calss
+		</p>
+		<div class="notclass">
+			class가 calss
+			<div class="class">
+				class가 calss
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

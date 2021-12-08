@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery 속성 선택자 예제</title>
+	<script src="../jquery-3.6.0.min.js"></script>
+	<script>
+		//$(document).ready(function(){})
+		function phoneFn(){
+			$("input[name^='phone-']").css("backgroundColor","yellow");
+
+			var phone="";
+
+			console.log($("input[name^='phone-']"));
+
+			$("input[name^='phone-']").each(function(){
+				var value = $(this).val();
+				phone += value;
+			});
+
+			$("input[name='phonefull'").val(phone);
+		}
+	</script>
+</head>
+<body>
+	<div id="d1">
+		<input type="text" name="phone-1" maxlength="3" size="5">
+		-
+		<input type="text" name="phone-2" maxlength="4" size="5">
+		-
+		<input type="text" name="phone-3" maxlength="4" size="5">
+		<button onclick="phoneFn()">클릭</button>
+		<br>
+		<input type="text" name="phonefull">
+	</div>
+</body>
+</html>
