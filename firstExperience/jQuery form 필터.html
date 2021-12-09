@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>폼 필터</title>
+	<script src="../jquery-3.6.0.min.js"></script>
+	<script>
+		function selCh(obj){
+			//var selValue = $("select:eq(0) option:selected").val();
+			var selValue = $(obj).find("option:selected").val();
+
+			$("#result").html(selValue);
+			//document.getElementById("result").innerHTML=selValue;
+		}
+
+		$(document).ready(function(){
+			$("input:text:not(:disabled)").css("background","yellow");
+			$("input:password").css("background","red");
+			$("input:checkbox[name='c1']:checked+span").css("color","red");
+			//인풋중 체크박스를 찾고 그중 네임이 c1인 애중 체크드가 되어있는애의 옆에있는 span을 찾아서 글자색을 red
+
+			//브라우저 로드시 선택된 라디오 버튼 옆에 있는 span이 텍스트 색상은 빨간색으로 보이게끔 jQuery를 사용하여 작성
+			$(".radio input:radio:checked+span").css("display","inline").css("color","red");//메소드체이닝
+
+			var selValue = $("select:eq(0) option:selected").val();
+			console.log(selValue);
+
+			$("input:button").css("background","orange");
+			$("input:submit").css("background","olive");
+			$("input:reset").css("background","purple");
+
+			var hiddenValue = $("input:hidden").val();
+			console.log("hidden 값 : "+hiddenValue);
+		});
+
+	</script>
+	<style>
+		.radio span{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<form>
+		<p>
+			<input type="hidden" value="안보임">
+		</p>
+		<p>
+			<input type="text">
+		</p>
+		<p>
+			<input type="password">
+		</p>
+		<p>
+			<input type="text" value="비활성화요소" disabled="">
+		</p>
+		<p>
+			<input type="checkbox" name="c1"><span>1</span>
+			<input type="checkbox" name="c1" checked><span>2</span>
+			<input type="checkbox" name="c1"><span>3</span>
+		</p>
+		<p class="radio">
+			<input type="radio" name="r1"><span>1</span>
+			<input type="radio" name="r1"><span>2</span>
+			<input type="radio" name="r1" checked><span>3</span>
+		</p>
+		<p>
+			<select onchange="selCh(this)">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3" selected>3</option>
+				<option value="4">4</option>
+			</select>
+			<select onchange="selCh(this)">
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7" selected>7</option>
+				<option value="8">8</option>
+			</select>
+			<div id="result">
+				여기에 select 박스에서 목록 선택이 변경될때마다 선택된 목록의 value 값을 출력하세요
+			</div>
+		</p>
+		<p>
+			<input type="button" value="일반버튼">
+			<input type="submit">
+			<input type="reset">
+		</p>
+	</form>
+</body>
+</html>

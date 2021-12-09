@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>자식 필터 사용 예제</title>
+	<script src="../jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("table:eq(0) tr:first-child").css("background","pink");
+			$("table:eq(0) tr:last-child").css("background","navy");
+			$("table:eq(0) tr:nth-child(3n-1)").css("background","green");
+			$("table:eq(0) tr:only-child").css("background","yellow");
+
+			/*
+				1.필터선택자를 사용하여 위에있는 css가 아래있는 테이블에 영향을 주지 않도록 수정
+				2.필터 선택자를 사용하여 1열에 있는 모든 셀 배경 분홍색
+				3.필터 선택자를 사용하여 5열에 있는 모든 셀 배경 파란색
+			*/
+			$("table:eq(1) td:first-child").css("background","pink");
+			$("table:eq(1) td:last-child").css("background","blue");
+		});
+	</script>
+</head>
+<body>
+	<table border="1">
+		<thead>
+			<tr>
+				<td>0</td>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>5</td>
+				<td>6</td>
+				<td>7</td>
+				<td>8</td>
+				<td>9</td>
+			</tr>
+			<tr>
+				<td>10</td>
+				<td>11</td>
+				<td>12</td>
+				<td>13</td>
+				<td>14</td>
+			</tr>
+			<tr>
+				<td>15</td>
+				<td>16</td>
+				<td>17</td>
+				<td>18</td>
+				<td>19</td>
+			</tr>
+			<tr>
+				<td>20</td>
+				<td>21</td>
+				<td>22</td>
+				<td>23</td>
+				<td>24</td>
+			</tr>
+		</tbody>
+	</table>
+	<table border="1">
+		<thead>
+			<tr>
+				<td>0</td>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>5</td>
+				<td>6</td>
+				<td>7</td>
+				<td>8</td>
+				<td>9</td>
+			</tr>
+			<tr>
+				<td>10</td>
+				<td>11</td>
+				<td>12</td>
+				<td>13</td>
+				<td>14</td>
+			</tr>
+			<tr>
+				<td>15</td>
+				<td>16</td>
+				<td>17</td>
+				<td>18</td>
+				<td>19</td>
+			</tr>
+			<tr>
+				<td>20</td>
+				<td>21</td>
+				<td>22</td>
+				<td>23</td>
+				<td>24</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

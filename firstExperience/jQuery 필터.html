@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery 필터</title>
+	<script src="../jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function(){
+
+			$("table:eq(0) td:eq(1)").css("background","yellow");
+			$("table:eq(0) td:even").css("color","blue");			//even = 짝수
+			$("table:eq(0) td:odd").css("color","red");			//odd = 홀수
+			$("table:eq(0) td:first").css("background","pink");			//first = 첫번째 , last
+			$("table:eq(0) td:gt(10)").css("background","green");			//gt = 기준아래
+			$("table:eq(0) td:lt(10)").css("background","orange");			//lt = 기준위
+
+			/*
+				1.필터선택자를 사용하여 위에있는 css가 아래있는 테이블에 영향을 주지 않도록 수정
+				2.필터 선택자를 사용하여 1열에 있는 모든 셀 배경 분홍색
+				3.필터 선택자를 사용하여 5열에 있는 모든 셀 배경 파란색
+			*/
+			$("table:eq(1) tr:eq(0) td:eq(0)").css("background","pink");
+			$("table:eq(1) tr:eq(1) td:eq(0)").css("background","pink");
+			$("table:eq(1) tr:eq(2) td:eq(0)").css("background","pink");
+			$("table:eq(1) tr:eq(3) td:eq(0)").css("background","pink");
+			$("table:eq(1) tr:eq(4) td:eq(0)").css("background","pink");
+			$("table:eq(1) tr:eq(0) td:eq(4)").css("background","blue");
+			$("table:eq(1) tr:eq(1) td:eq(4)").css("background","blue");
+			$("table:eq(1) tr:eq(2) td:eq(4)").css("background","blue");
+			$("table:eq(1) tr:eq(3) td:eq(4)").css("background","blue");
+			$("table:eq(1) tr:eq(4) td:eq(4)").css("background","blue");
+
+
+			$("body > div:eq(0) .heading:header").css("border","2px solid black");
+			$("body > div:eq(0) .heading:not(p:eq(1))").css("background","yellow");
+
+			//focus 필터 확인 필요
+			$("body > div:eq(1) input:focus").css("background","red");
+		})
+	</script>
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<td>0</td>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+			<td>4</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td>6</td>
+			<td>7</td>
+			<td>8</td>
+			<td>9</td>
+		</tr>
+		<tr>
+			<td>10</td>
+			<td>11</td>
+			<td>12</td>
+			<td>13</td>
+			<td>14</td>
+		</tr>
+		<tr>
+			<td>15</td>
+			<td>16</td>
+			<td>17</td>
+			<td>18</td>
+			<td>19</td>
+		</tr>
+		<tr>
+			<td>20</td>
+			<td>21</td>
+			<td>22</td>
+			<td>23</td>
+			<td>24</td>
+		</tr>
+	</table>
+	<table border="1">
+		<tr>
+			<td>0</td>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+			<td>4</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td>6</td>
+			<td>7</td>
+			<td>8</td>
+			<td>9</td>
+		</tr>
+		<tr>
+			<td>10</td>
+			<td>11</td>
+			<td>12</td>
+			<td>13</td>
+			<td>14</td>
+		</tr>
+		<tr>
+			<td>15</td>
+			<td>16</td>
+			<td>17</td>
+			<td>18</td>
+			<td>19</td>
+		</tr>
+		<tr>
+			<td>20</td>
+			<td>21</td>
+			<td>22</td>
+			<td>23</td>
+			<td>24</td>
+		</tr>
+	</table>
+	<hr>
+	<div>
+		<h2 class="heading">h2 태그입니다.</h2>
+		<p class="heading">p 태그입니다.</p>
+		<p class="heading">p 태그입니다.</p>
+		<div class="heading">div 태그입니다.</div>
+		<h3 class="heading">h3 태그입니다.</h3>
+	</div>
+	<hr>
+	<div>
+		<input type="text">
+		<input type="text">
+		<input type="text">
+	</div>
+</body>
+</html>
