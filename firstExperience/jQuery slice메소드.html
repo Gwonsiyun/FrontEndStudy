@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style> 
+		div { 
+			width:40px; 
+			height:40px; 
+			margin:10px; 
+			float:left; 
+			border:2px solid blue; 
+		}
+		span { 
+			color:red; 
+			font-weight:bold; 
+		} 
+		button { 
+			margin:5px; 
+		} 
+	</style>
+	<script src="../jquery-3.6.0.min.js"></script>
+</head>
+<body> 
+	<p><button>Turn slice yellow</button> <span>Click the button!</span></p>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<script> 
+		function colorEm() { 
+			var $div = $("div");
+			//$div변수안에 div를 배열로 담겠다.
+			var start = Math.floor(Math.random() * $div.length);
+			//start변수안에 소수점을 버린 랜덤수 0~div.length(8)까지 담겠다.
+			var end = Math.floor(Math.random() * ($div.length - start)) + start + 1;
+			//end변수안에 소수점을 버린 랜덤수 4~8까지(범위5(8-start(예)3) 시작수4(3+1))
+			if (end == $div.length) {	//and가 div.length와 같을때 div==8
+				end = undefined;		//and값을 주지않겠다.
+			}	
+			$div.css("background", "");		//$div에 있는 배열데이터 들에게 바탕을 주지 않겠다.
+			if (end){	//div가 0보다 클때(0은 false 1이상은 true)
+				$div.slice(start, end).css("background", "yellow"); //
+			}else {		
+				$div.slice(start).css("background", "yellow");
+			}
+			$("span").text('$("div").slice(' + start + (end ? ', ' + end : '') + ').css("background", "yellow");'); 
+		} 
+			$("button").click(colorEm); //버튼을 클릭하면 함수 colorEm호출
+	</script>
+</body>
+</html>

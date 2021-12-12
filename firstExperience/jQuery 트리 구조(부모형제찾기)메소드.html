@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="../jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("body").children().css("border","1px solid black");	//children(자손찾기)은 특정해주지 않으면 모든자식을 찾는다.
+			$("p").closest("div").css("background","yellow");		//closest는 가장 가까운 조상(부모포함)단일객체 만을 찾는다.
+			$("div").find("p").css("color","purple");				//find(후손찾기)는 찾을 대상 필수 
+			$("tr:eq(0)").next().css("background","blue");			//셀렉터에 필터선택자 가능
+			$("button").parent().css("background","orange");		//부모찾기
+			$("table").prev("p").css("fontWeight","bold");			//prev(형찾기)
+			$("tr:last").prev().prev().css("background","pink");	//형의 형찾기
+
+			$("li").click(function(){
+				$(this).css("background","skyblue");
+				$(this).siblings().css("background","inherit");		//나를 제외한 나머지 형제들
+				//inherit부모것을 상속받겠다.
+			});
+		});
+	</script>
+</head>
+<body>
+	<h1>예제1</h1>
+	<div>
+		<h2>트리구조 메소드 이용하기</h2>
+		<p>-find()는 셀렉터로부터 하위 자손으로 존재하는 selector를 찾습니다.</p>
+		<div>
+			<p>
+				- 계층관계를 이용하여 요소를 찾아다니는 메소드입니다.
+			</p>
+			<table border="1">
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td><button>click</button></td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td><button>click</button></td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td><button>click</button></td>
+					</tr>
+				</tbody>
+			</table>
+			<ul>
+				<li>click1</li>
+				<li>click2</li>
+				<li>click3</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

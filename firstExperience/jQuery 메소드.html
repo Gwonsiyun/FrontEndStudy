@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery 필터 메소드</title>
+	<script src="../jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			/*
+				아래있는 모든 div에 width = 100px; height = 100px; border = 1px solid black; display = inline-block; 을 주고 첫번째 div에만 배경 노란색을 주세요
+			*/
+			var divs = $("div#d1 div");
+			var divs2= $("div#d2 div");
+			var divs3 = $("div#d3 div");
+			divs.eq(0).css("background","yellow");
+
+			divs.filter(".here").css("background","pink");
+
+			divs2.filter(function(index){
+				return (index%3 == 0);
+			}).css("background","orange");
+
+			//has(selector) - 앞에 셀렉터로 부터 검색된 요소들의 하위에 후손으로 has에 selector가 존재하는 객체 집합을 반환
+			$("#d3 div").has("#here").css("background","blue");
+
+		});
+		function checkFn(obj){
+			var $obj = $(obj);
+			if($obj.is(":checked")){
+				$obj.next().css("color","orange");				
+			}else{
+				$obj.next().css("color","black");				
+			}
+		}
+	</script>
+	<style>
+		div#d3 div,div#d2 div,div#d1 div{
+			width: 100px;
+			height: 100px;
+			border: 1px solid black;
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+	<div id="d1">
+		<div>1</div>
+		<div>2</div>
+		<div class="here">3</div>
+		<div>4</div>
+		<div>5</div>
+	</div>
+	<hr>
+	<div id="d2">
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+		<div>4</div>
+		<div>5</div>
+	</div>
+	<hr>
+	<div id="d3">
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+		<div>4
+			<p id="here"></p>
+		</div>
+		<div>5</div>
+	</div>
+	<div id="d4">
+		<input type="checkbox" onclick="checkFn(this)"><span>check1</span>
+	</div>
+	<hr>
+	<ul>
+		<li>목록1
+			<span>*</span>
+		</li>
+		<li>목록2
+			<span>*</span>
+		</li>
+		<li>목록3
+			<span>*</span>
+		</li>
+	</ul>
+	<div id="result">
+		
+	</div>
+	<!--
+		화면이 로드된 후 브라우저에 출력되고있는 모든 요소들중 li 태그에만 border 1px solid black을 주세요
+		is()활용
+		선택자 * 사용, .each(function(){})사용, this(each 안에서)
+	!-->
+	<script>
+		$(document).ready(function(){
+			/*$("*").each(function(){
+				if(this.is("li")){
+					this.css("border","1px solid black");
+				}
+			});*/
+			$("*").each(function(){
+				if($(this).is("li")){
+					$(this).css("border","1px solid black");//왜 $가 들어가야하지?
+				}
+			});
+
+			$("li").map(function(index){
+				return $(this).find("span").css("color","red");
+
+			});
+
+			var spans=$("li").map(function(index){
+				return $(this).find("span");
+			}).css("color","blue");
+			$("#result").append(spans[0])
+		});
+	</script>
+</body>
+</html>
