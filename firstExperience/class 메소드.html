@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>class 메소드 예제</title>
+	<style>
+		.box{
+			width: 100px;
+			height: 100px;
+			border: 1px solid black;
+			background: yellow;
+		}
+	</style>
+	<script src="../jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			//$("div").addClass("box");
+			$("div").addClass(function(i,currName){//클래스 추가
+				if(currName=="one two"){
+					return "no";
+				}else{
+					return "box";
+				}
+			}).removeClass(function(i,currName){//클래스 제거
+				if(currName=="one two no"){
+					return "no";
+				}else{
+					return "box";
+				}
+			});
+			/*$("div:eq(2)").click(function(){//ㅠㅠㅠ안댐,.,,
+				$(this).toggleClass("box");
+			});*/
+			$("div:eq(2)").on("click", function(){//안댐 모르겠
+				console.log(this);
+				if($(this).hasClass("box")){
+					$(this).removeClass("box");
+				}else{
+					$(this).addClass("box");
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="one two">1</div>
+	<div>2</div>
+	<div>3</div>
+	<!--3번 div를 클릭했을때 .box가 있으면 제거 없으면 추가 해주세요.-->
+
+	<input type="text" placeholder="텍스트를 입력하세요">
+	<input type="email" placeholder="이메일을 입력하세요">
+	<button onclick="fn()">click1</button>
+	<button onclick="removeFn()">click2</button>
+	<button onclick="valFn()">click3</button>
+	<script>
+		function valFn(){
+			var text = $("input:text:eq(0)").val();//괄호안이 비어있으면 해당값을 가져온다.
+			var email = $("input[type=email]:eq(0)").val();
+
+			console.log(text);
+			console.log(email);
+
+			$("input:text:eq(0)").val("변경값 입력");//문자가 들어가면 변경
+		}
+
+		function removeFn(){
+			$("input").each(function(){
+				var attrVal = $(this).attr("type");//속성값 가져오기
+				if(attrVal=="email"){
+					$(this).removeAttr("placeholder");//속성 제거
+				}
+			});
+		}
+
+		function fn(){
+			$("input").each(function(){
+				var currAttr = $(this).attr("type");
+				if(currAttr=="email"){
+					$(this).attr("type","password");//변경하고자하는 타입, 타입 값지정
+				}
+			});
+		}
+	</script>
+</body>
+</html>

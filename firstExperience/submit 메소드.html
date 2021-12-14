@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>submit() 사용</title>
+	<script src="../jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("form").submit(function(){
+				return false;
+			});
+		});	
+	</script>
+</head>
+<body>
+	<form action="text.html">
+		<input type="submit" name="">
+	</form>
+</body>
+</html>

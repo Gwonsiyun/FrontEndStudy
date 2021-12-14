@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>event 메소드</title>
+	<script src="../jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			var cnt = 1;
+			/*$("#mouse").bind("mouseenter mouseleave",function(e){
+				$(this).text(cnt);
+				cnt++;
+				if(e.type=="mouseenter"){
+					$(this).css("background","yellow");
+				}else{
+					$(this).css("background","red");
+				}
+			});*/
+			var enterCnt = 1;
+			var leaveCnt = 1;
+			$("#mouse").bind({
+				mouseenter : function(){
+					$(this).css("background","yellow").text("enterCnt"+enterCnt);
+					enterCnt++;
+				},
+				mouseleave : function(){
+					$(this).css("background","red").text("leaveCnt"+leaveCnt);
+					leaveCnt++;
+				}
+			});
+
+			$("#btn").on("click",function(){
+				$("#on").append("<div class='box'></div>")
+			});
+			/*$(".box").click(function(){
+				alert("박스클릭");
+			});*/
+			$(document).on("click",".box",function(){
+				alert("박스클릭");
+			});
+		});
+	</script>
+	<style>
+		#mouse,.box{
+			width: 100px;
+			height: 100px;
+			border: 1px solid black;
+		}
+		
+	</style>
+</head>
+<body>
+	<div id="mouse">
+		mouse
+	</div>
+	<hr>
+	<div id="on">
+		<div class="box">1</div>
+	</div>
+	<input id="btn" type="button" value="click">
+</body>
+</html>
