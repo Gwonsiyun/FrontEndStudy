@@ -1,54 +1,70 @@
-package javastudy.ex1216;
+package javastudy.ex1217;
 
 public class Ex01 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+
+		//2차원 배열 - 배열 안에 원소로 배열이 존재하는 구조
+		int[][] a = new int[2][3];
+		//0, 0, 0
+		//0, 0, 0
 		
-		//반복문
-		//1.for문
-		//1~10까지 출력
-		int i = 0;
-		for(i=1; i<=10; i++) {
-			System.out.println(i);
-		}
+		System.out.println(a[1][1]);
 		
-		//1~10까지의 합
+		int[][] b = new int[3][];
+		b[0] = new int[3];
+		b[1] = new int[5];
+		
+		//2차원 배열에서 행의 길이 구하기
+		System.out.println(b.length);
+		
+		//특정 행의 열의 길이 구하기
+		System.out.println(b[0].length);
+		
+		int[][] array = {
+			{95,86},
+			{83,92,96},
+			{78,83,93,87,88},
+		};
+		
+		//p182 ex8
 		int sum = 0;
-		for(i=1; i<=10; i++) {
-			sum += i;
-		}
-		System.out.println("1~10까지의 합은 "+sum);
+		double avg = 0;
+		int arrayLength = 0;
 		
-		for(int x=2; x<=9; x++) {
-			System.out.println("["+x+"단]");
-			for(int y=1; y<=9; y++) {
-				System.out.println(x+"X"+y+"="+(x*y));
+		for(int i=0; i<array.length;i++) {
+			for(int j=0;j<array[i].length;j++) {
+				sum += array[i][j];	
 			}
+			arrayLength += array[i].length;
 		}
+		avg = sum/(double)arrayLength;
 		
-		//for문을 이용하여 1부터 100까지의 정수 중에서 3의 배수의 총합을 구하라
-		sum=0;
-		for(i=3;i<=100;i+=3) {
-			sum+=i;
-		}
-		System.out.println("3의 배수의 합 : "+sum);
+		System.out.println("sum : "+sum);
+		System.out.println("avg : "+avg);
 		
-		//중첩 for문을 이용하여 방정식 4x+5y=60의 모든 해를 구하라
-		//단, x와 y는 10이하의 자연수
-		for(int x=1; x<=10; x++) {
-			for(int y=1; y<=10; y++) {
-				if(4*x+5*y==60) {
-					System.out.println("("+x+", "+y+")");
-				}
-			}
-		}
-		//for문을 이용해서 실행 결과와 같은 삼각형을 출력하는 코드를 작성하라
-		String star = "";
-		for(i=1; i<=5; i++) {
-			star+="*";
-			System.out.println(star);
-		}
+		
+		
+		/*
+			참조 타입의 데이터를 담는 배열은 각각의 원소에 해당하는 데이터를 직접 담고있는
+			것이 아니라 실제 데이터는 다른곳에 생성되고 생성된 주소를 각각의 원소가
+			참조하고 있는 구조로 관리된다.
+		 */
+		
+		String[] s = new String[3];//각각 null값을 가지고 있는 3칸의 문자열 배열 생성
+		s[0] = "A";
+		s[1] = "A";
+		s[2] = new String("A");
+		
+		System.out.println(s[0]);
+		System.out.println(s[1]);
+		System.out.println(s[2]);
+		
+		System.out.println(s[0]==s[1]);
+		System.out.println(s[0]=="A");
+		System.out.println(s[0]==s[2]);
+		System.out.println(s[2]=="A");//주소값으로 들어가있기에 문자열 A와는 다름
 	}
 
 }
