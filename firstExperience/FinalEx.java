@@ -1,10 +1,16 @@
-package javastudy.ex1220;
+package javastudy.ex1221;
 
 public class FinalEx {
 
-	final String field1 = "field1";
-	String field2;
+	final String field1 = "test1";
+	final String field2;
 	
+	static final String FIELD3 = "testSaticFinal";
 	
-	
+	FinalEx(String field2){
+		this.field2 = field2;
+	}
+//	finalEx(){
+//		
+//	}
 }

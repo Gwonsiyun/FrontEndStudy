@@ -1,4 +1,4 @@
-package javastudy.ex1220;
+package javastudy.ex1221;
 
 public class Ex01 {
 
