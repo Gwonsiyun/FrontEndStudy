@@ -2,18 +2,27 @@ package javastudy.ex1222.ex;
 
 import java.util.Scanner;
 
-public class Ex01 {
+public class Ex01_3 {
 	public static void main(String[] args) {
 		
 		Scanner scanner = new Scanner(System.in);
 		
+		boolean run = true;
+		int num = 1;
 		int scoreMe = 0;
 		int scoreCom = 0;
 		int scoreSam = 0;
-		for(int i=0; i<3; i++) {
-			System.out.println(i+1+"번째 대결!!");
+		
+		
+		game:while(run) {
+			System.out.println(num+"번째 대결!!");
 			int sc = scanner.nextInt();
-			
+			if(sc==4) {
+				run=false;
+				System.out.println("게임을 종료합니다.");
+				break game;
+			}
+			num++;
 			int random = (int)(Math.floor(Math.random()*3)+1);
 		
 			String com = "";
@@ -46,11 +55,11 @@ public class Ex01 {
 			}
 		}
 		if(scoreMe>scoreCom) {
-			System.out.println("대결 결과 : 3판중 "+scoreMe+"번 이겼으므로 이겼습니다.");
+			System.out.println("대결 결과 : "+num+"판중 "+scoreMe+"번 이겼으므로 이겼습니다.");
 		}else if(scoreMe<scoreCom) {
-			System.out.println("대결 결과 : 3판중 "+scoreCom+"번 졌으므로 졌습니다.");
+			System.out.println("대결 결과 : "+num+"판중 "+scoreCom+"번 졌으므로 졌습니다.");
 		}else {
-			System.out.println("대결 결과 : 3판중 "+scoreMe+"번 이기고 "+scoreCom+"번 지고 "+scoreSam+"번 비겼으므로 비겼습니다.");
+			System.out.println("대결 결과 : "+num+"판중 "+scoreMe+"번 이기고 "+scoreCom+"번 지고 "+scoreSam+"번 비겼으므로 비겼습니다.");
 		}
 	}
 }

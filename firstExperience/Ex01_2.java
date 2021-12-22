@@ -1,21 +1,17 @@
 package javastudy.ex1222.ex;
 
-import java.util.Scanner;
-
-public class Ex01 {
+public class Ex01_2 {
 	public static void main(String[] args) {
-		
-		Scanner scanner = new Scanner(System.in);
-		
+			
 		int scoreMe = 0;
 		int scoreCom = 0;
 		int scoreSam = 0;
 		for(int i=0; i<3; i++) {
 			System.out.println(i+1+"번째 대결!!");
-			int sc = scanner.nextInt();
+			
 			
 			int random = (int)(Math.floor(Math.random()*3)+1);
-		
+			int sc = (int)(Math.floor(Math.random()*3)+1);
 			String com = "";
 			String me = "";
 			if(random == 1) {
