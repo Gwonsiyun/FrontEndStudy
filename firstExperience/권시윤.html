@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Create an account</title>
+	<style>
+		body{
+			width: 100%;
+			height: 100vh;
+			display: flex;
+			align-items: center;
+		}
+		section{
+			width: 300px;
+			height: 400px;
+			margin: auto;
+		}
+		h3{
+			font-size: 1.5em;
+			font-weight: 900;
+		}
+		p{
+			margin: 20px 0px 0px 0px;
+			color: black;
+			font-weight: 600;
+		}
+		input{
+			width: 95%;
+			height: 20px;
+		}
+		#Consent{
+			margin: 10px 0px;
+			font-size: 0.7em;
+		}
+		#button{
+			border: none;
+			width: 97%;
+			height: 30px;
+			background: gray;
+			color: white;
+		}
+		span{
+			display: none;
+		}
+	</style>
+	<script src="jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			var name = false;
+			var email = false;
+			var password = false;
+			var check;
+			$("button").click(function(){
+				$("input").focus();
+				if(name == true&&email == true&& password == true){
+					$("#frm").submit();
+				}else{
+					alert("형식에 맞지않습니다.");
+				}
+			});
+			$("input").focus(function(){
+				console.log($(this));
+				var value = $(this).val();
+				if($(this).attr("name")=="name"){
+					var check = /^[가-힣a-zA-Z\s]+$/;
+				}else if($(this).attr("name")=="email"){
+					var check = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+				}else if($(this).attr("name")=="password"){
+				  	var check = /^[A-Za-z0-9+]{5,}$/;
+				}
+				if(!check.test(value)){
+					if($(this).attr("name")=="name"){
+						name=false;
+					}else if($(this).attr("name")=="email"){
+						email=false;
+					}else if($(this).attr("name")=="password"){
+				  		password=false;
+					}
+				}else{
+					if($(this).attr("name")=="name"){
+						name=true;
+					}else if($(this).attr("name")=="email"){
+						email=true;
+					}else if($(this).attr("name")=="password"){
+				  		password=true;
+					}
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<section>
+		<header>
+			<h3>Create an account</h3>
+		</header>
+		<content>
+			<form id="frm">
+				<div>
+					<p>Full Name</p>
+					<input type="text" name="name" alt="이름입력" placeholder="ex. John Doe">
+					<span></span>
+				</div>
+				<div>
+					<p>Email Address</p>
+					<input type="email" name="email" alt="이메일 입력" placeholder="ex. Johndoe@gmail.com">
+					<span></span>
+				</div>
+				<div>
+					<p>Password</p>
+					<input type="password" name="password" alt="비밀번호입력" placeholder="Min. 5 characters">
+					<span></span>
+				</div>
+				<div id="Consent">By clicking "Create your account" below,you agree to our terms of service and privacy policy</div>
+				<button id="button" type="button" name="createAccount" >Create your account</button>
+			</form>
+		</content>
+	</section>
+</body>
+</html>
