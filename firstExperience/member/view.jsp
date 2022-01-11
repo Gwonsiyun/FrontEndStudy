@@ -5,51 +5,53 @@
 	request.setCharacterEncoding("UTF-8");
 	String searchType = request.getParameter("searchType");
 	String searchValue = request.getParameter("searchValue");
-	
-	String bidx= request.getParameter("bidx");
 
-	String url	= "jdb:oracle:thin:@localhost:1522:xe";
-	String user = "system";
-	String pass = "1234";
+
+	String midx= request.getParameter("midx");
+
+	String url	= "jdbc:oracle:thin:@localhost:1522:xe";
+	String user	= "system";
+	String pass	= "1234";
 	
 	Connection conn	= null;
 	PreparedStatement psmt = null;
 	ResultSet rs	= null;
 	
-	String subject_ = "";
-	String writer_ = "";
-	String content_ = "";
-	int bidx_ = 0;
+	String memberid_ = "";
+	String memberpwd_ = "";
+	String membername_ = "";
+	String addr_ = "";
+	String phone_ = "";
+	String email_ = "";
+	int midx_ = 0;
 	
 	try{
 		Class.forName("oracle.jdbc.driver.OracleDriver");
 		conn = DriverManager.getConnection(url,user,pass);
 		
-		String sql = " select * from board where bidx = "+bidx;
+		String sql = " select * from member where midx = "+midx;
 		
 		psmt = conn.prepareStatement(sql);
 		rs = psmt.executeQuery();
 		
 		if(rs.next()){
-			subject_ = rs.getString("subject");
-			writer_ = rs.getString("writer");
-			content_ = rs.getString("content");
-			bidx_ = rs.getInt("bidx");
+			memberid_ = rs.getString("memberid");
+			memberpwd_ = rs.getString("memberpwd");
+			membername_ = rs.getString("membername");
+			addr_ = rs.getString("addr");
+			phone_ = rs.getString("phone");
+			email_ = rs.getString("email");
+			midx_ = rs.getInt("midx");
 		}
 		
 	}catch(Exception e){
 		e.printStackTrace();
 	}finally{
-		if(conn != null){
-			conn.close();		
-		}
-		if(psmt != null){
-			psmt.close();		
-		}
-		if(rs != null){
-			rs.close();		
-		}
+		if(conn != null) conn.close();
+		if(psmt != null) psmt.close();
+		if(rs != null) rs.close();
 	}
+
 %>
 <!DOCTYPE html>
 <html>
@@ -61,29 +63,33 @@
 <body>
 	<%@ include file="/header.jsp" %>
 	<section>
-		<h2>게시글 상세조회</h2>
+		<h2>회원 상세정보</h2>
 		<article>
-			<table border="1" width="70%">
+			<table border="1">
 				<tr>
-					<th>글제목</th>
-					<td colsqan="3"><%=subject_ %></td>
+					<th>아이디</th>
+					<td><%=memberid_ %></td>
+					<th>비밀번호</th>
+					<td><%=memberpwd_ %></td>
 				</tr>
 				<tr>
-					<th>글번호</th>
-					<td><%=bidx_ %></td>
-					<th>작성자</th>
-					<td><%=writer_ %></td>
+					<th>회원명</th>
+					<td><%=membername_ %></td>
+					<th>주소</th>
+					<td><%=addr_ %></td>
 				</tr>
-				<tr height = "300px">
-					<th>내용</th>
-					<td colspan="3"><%=content_ %></td>
+				<tr>
+					<th>연락처</th>
+					<td><%=phone_ %></td>
+					<th>이메일</th>
+					<td><%=email_ %></td>
 				</tr>
 			</table>
 			<button type="button" onclick="location.href='list.jsp?searchType=<%=searchType%>&searchValue=<%=searchValue%>'">목록</button>
-			<button type="button" onclick="location.href='modify.jsp?bidx=<%=bidx_%>&searchType=<%=searchType%>&searchValue=<%=searchValue%>'">수정</button>
+			<button type="button" onclick="location.href='modify.jsp?midx=<%=midx_%>&searchType=<%=searchType%>&searchValue=<%=searchValue%>'">수정</button>
 			<button type="button" onclick="deleteFn()">삭제</button>
 			<form name="frm" method="post">
-				<input type="hidden" name="bidx" value="<%=bidx_%>">
+				<input type="hidden" name="midx" value="<%=midx_%>">
 			</form>
 		</article>
 	</section>

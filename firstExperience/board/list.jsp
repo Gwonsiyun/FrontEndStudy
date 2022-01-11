@@ -20,7 +20,7 @@
 		Class.forName("oracle.jdbc.driver.OracleDriver");
 		conn = DriverManager.getConnection(url,user,pass);
 		//String sql = "select * from board order by originbidx asc,depth asc";
-		String sql = "select * from board";
+		String sql = "select * from board where delyn='N'";
 		
 		if(searchValue!=null && !searchValue.equals("") && !searchValue.equals("null")){
 			if(searchType.equals("subject")){
@@ -30,6 +30,8 @@
 			}
 			
 		}
+		
+		sql += "order by bidx desc ";
 		
 		psmt = conn.prepareStatement(sql);
 		
@@ -119,6 +121,7 @@
 				%>						
 				</tbody>
 			</table>
+			<button onclick="location.href='insert.jsp'">등록</button>
 		</article>
 	</section>
 	<%@ include file="/footer.jsp" %>

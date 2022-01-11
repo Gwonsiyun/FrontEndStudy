@@ -58,7 +58,8 @@
 	<section>
 		<h2>게시글 상세조회</h2>
 		<article>
-			<form>
+			<form action="modifyOk.jsp" method="post">
+				<input type="hidden" name="bidx" value="<%=bidx_ %>">
 				<table border="1" width="70%">
 					<tr>
 						<th>글제목</th>
@@ -72,11 +73,11 @@
 					</tr>
 					<tr height = "300px">
 						<th>내용</th>
-						<td colspan="3"><textarea><%=content_ %></textarea></td>
+						<td colspan="3"><textarea name="content"><%=content_ %></textarea></td>
 					</tr>
 				</table>
 				<button type="button" onclick="location.href='view.jsp?bidx=<%=bidx_%>&searchType=<%=searchType%>&searchValue=<%=searchValue%>'">취소</button>
-				<button type="submit" onclick="">저장</button>
+				<button type="submit">저장</button>
 			</form>
 		</article>
 	</section>
