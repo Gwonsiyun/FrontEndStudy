@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
+<%@ page import="boardWeb.vo.*" %>
+<%
+	Member login = (Member)session.getAttribute("loginUser");
+%>
 <%
 	request.setCharacterEncoding("UTF-8");
 
@@ -19,13 +23,14 @@
 		Class.forName("oracle.jdbc.driver.OracleDriver");
 		conn = DriverManager.getConnection(url,user,pass);
 		
-		String sql= " insert into board(bidx,subject,writer,content,midx) values(bidx_seq.nextval,?,?,?,1)";
+		String sql= " insert into board(bidx,subject,writer,content,midx) values(bidx_seq.nextval,?,?,?,?)";
 		//로그인이 아직 없어서 midx를 직접 기입함
 		
 		psmt = conn.prepareStatement(sql);
 		psmt.setString(1,subject);
 		psmt.setString(2,writer);
 		psmt.setString(3,content);
+		psmt.setInt(4,login.getMidx());
 		
 		int result = psmt.executeUpdate();
 		

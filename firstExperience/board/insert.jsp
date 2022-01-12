@@ -1,5 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import = "boardWeb.vo.*" %>
+<%
+	Member login = (Member)session.getAttribute("loginUser");
+
+	String userName = "";
+	if(login!=null){
+		userName = login.getMembername();
+	}
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,7 +29,7 @@
 					</tr>
 					<tr>
 						<th>작성자</th>
-						<td><input type="text" name="writer"></td>
+						<td><input type="text" name="writer" value="<%=userName%>" readonly></td>
 					</tr>
 					<tr height="300">
 						<th>내용</th>

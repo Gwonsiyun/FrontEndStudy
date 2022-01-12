@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
+<%@ page import="boardWeb.vo.*" %>
+<%
+	Member user_ = (Member)session.getAttribute("loginUser");
+%>
 <%
 	request.setCharacterEncoding("UTF-8");
 	String searchType = request.getParameter("searchType");
@@ -20,6 +24,7 @@
 	String writer_ = "";
 	String content_ = "";
 	int bidx_ = 0;
+	int midx_ = 0;
 	
 	try{
 		Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -35,6 +40,7 @@
 			writer_ = rs.getString("writer");
 			content_ = rs.getString("content");
 			bidx_ = rs.getInt("bidx");
+			midx_ = rs.getInt("midx");
 		}
 		
 	}catch(Exception e){
@@ -80,8 +86,10 @@
 				</tr>
 			</table>
 			<button type="button" onclick="location.href='list.jsp?searchType=<%=searchType%>&searchValue=<%=searchValue%>'">목록</button>
+			<%if(user_!= null && user_.getMidx() == midx_){ %>
 			<button type="button" onclick="location.href='modify.jsp?bidx=<%=bidx_%>&searchType=<%=searchType%>&searchValue=<%=searchValue%>'">수정</button>
 			<button type="button" onclick="deleteFn()">삭제</button>
+			<%} %>
 			<form name="frm" method="post">
 				<input type="hidden" name="bidx" value="<%=bidx_%>">
 			</form>

@@ -15,19 +15,21 @@
 			<form action="insertOk.jsp" method="post">
 				<table border="1">
 					<tr>
-						<th colspan="2">아이디</th>
-						<td colspan="2"><input type="text" name="memberid"></td>
-						<th colspan="2">비밀번호</th>
-						<td colspan="2"><input type="text" name="memberpwd"></td>
+						<th>아이디</th>
+						<td><input type="text" name="memberid"></td>
+						<th>비밀번호</th>
+						<td><input type="text" name="memberpwd"></td>
 					</tr>
 					<tr>
 						<th>이름</th>
 						<td><input type="text" name="membername"></td>
 						<th>나이</th>
 						<td><input type="text" name="age"></td>
+					</tr>
+					<tr>
 						<th>성별</th>
 						<td>
-							<select name="gender">
+							<select name="gender" width="40px">
 								<option value="M">M</option>
 								<option value="F">F</option>
 							</select>
@@ -36,10 +38,10 @@
 						<td><input type="text" name="addr"></td>
 					</tr>
 					<tr>
-						<th>번호</th>
-						<td colspan="3"><input type="text" name="phone"></td>
+						<th>연락처</th>
+						<td><input type="text" name="phone"></td>
 						<th>이메일</th>
-						<td colspan="3"><input type="text" name="email"></td>
+						<td><input type="text" name="email"></td>
 					</tr>
 				</table>
 				<input type="button" value="취소" onclick="location.href='list.jsp'">

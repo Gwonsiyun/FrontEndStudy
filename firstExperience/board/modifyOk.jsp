@@ -31,7 +31,7 @@
 			response.sendRedirect("view.jsp?bidx="+bidx);
 		}else{
 			//out.print("<script>alert('수정실패!')</script>");
-			response.sendRedirect("list,jsp");
+			response.sendRedirect("list.jsp");
 		}
 	}catch(Exception e){
 		e.printStackTrace();
